@@ -1,6 +1,6 @@
 import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
-import { getObject, getString } from "./Functions";
+import { getObject, getString } from "../utils/Functions";
 
 
 

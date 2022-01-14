@@ -1,39 +1,35 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { updateData } from '../Redux/Data/actions'
 import { KPLoader } from './KPLoader'
+import KryptonPayCheckout from './KryptonPayCheckout'
 
-export const ConfimationView = ({ coin, restartProcess, changeViewTitle }) => {
+// { coin = { coin: "usdt" }, restartProcess, changeViewTitle }
+
+const ConfimationView = (props) => {
+  const coin = props?.paymentCoin
+  const paymentStatus = props?.paymentStatus
   const defaultMsg = "Processing your payment, please wait..."
   const [status, setStatus] = React.useState('processing')
   const [message, setMessage] = React.useState(defaultMsg)
 
-  React.useEffect(() => {
-    setTimeout(() => {
-
-        setStatus('processing')
-        setMessage(`You ${coin.coin} has been received, and it’s awaiting confirmation please wait for few minutes...`)
-        changeViewTitle('Confirming Payment (1/5)')
-
-        setTimeout(() => {
-          setStatus('success')
-          setMessage('Payment received, your transaction reference is <strong>P1234567890</strong>')
-          changeViewTitle('Completed')
-      }, 3000);
-
-    }, 3000);
-  },[])
 
   const onContinue = () => {
     window.parent.postMessage({ action: "successpayment", data: {}, krypton_pay: true }, "*");
   }
 
+  const restartProcess = () => {
+    window.parent.postMessage({ action: paymentStatus?.status ? "successpayment" : "failedpayment", data: paymentStatus, krypton_pay: true }, "*");
+  }
+
   return (
-		<div>
+		<KryptonPayCheckout>
 			<div className="field">
 				<div className="control">
 					<div className="l-card">
               <KPLoader
-                status={status}
-                message={message} 
+                status={paymentStatus?.status ? 'success' : 'failed'}
+                message={`${paymentStatus?.message} .Your transaction reference is <strong>${paymentStatus?.data?.reference}</strong>`} 
                 image={coin.coin} 
                 restartProcess={restartProcess}
                 onContinue={onContinue}
@@ -41,6 +37,22 @@ export const ConfimationView = ({ coin, restartProcess, changeViewTitle }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</KryptonPayCheckout>
 	);
 }
+
+
+const mapStateToProps = (state) => {
+	return { ...state.data };
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		updateData: (e) => dispatch(updateData(e)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConfimationView);
+
+
+

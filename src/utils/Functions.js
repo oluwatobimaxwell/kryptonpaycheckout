@@ -12,7 +12,7 @@ export function shortMoney(value) {
   return num;
 }
 
-export const toMoney = (amount, symbol, formatter) => {
+export const toMoney = (amount = 0, symbol, formatter) => {
   var money = (Math.abs(amount) || 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
   if(formatter) return formatter((symbol || "₦"), money);
   return (
@@ -21,6 +21,15 @@ export const toMoney = (amount, symbol, formatter) => {
     money
   );
 };
+
+export function formatSeconds(sec) {
+  return parseInt((sec % 3600) / 60) > 0
+      ? parseInt((sec % 3600) / 60) +
+              "hr " +
+              parseInt((sec % 3600) % 60) +
+              "min"
+      : parseInt((sec % 3600) % 60) + "min";
+}
 
 // save data to local storage
 export function storeObject(data) {

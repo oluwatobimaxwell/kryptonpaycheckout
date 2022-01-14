@@ -4,15 +4,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { processError, storeObject, toMoney } from "../utils/Functions";
-import { ClockTiker } from "./others";
+import ClockTiker from "./others";
 import { SvgIcon } from "./SvgIcon";
 import QRCode from "react-qr-code";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import OtpInput from "react-otp-input";
 import { KPLoader } from "./KPLoader";
-import { Api } from "../utils/Api";
+import { Api } from "../classes/Api";
 import { formatPhoneNumberInt } from "./KryptonPayCheckout";
+import { connect } from "react-redux";
+import { continuousConfirmation, updateData } from "../Redux/Data/actions";
+import KryptonPayCheckout from './KryptonPayCheckout';
+import { useNavigate } from "react-router-dom";
 
 const api = new Api();
 
@@ -48,6 +52,7 @@ export const RequestOTP = ({
 	getOTP,
 	mobilePhone,
 	setMobilePhone,
+	close
 }) => {
 	const [edit, setEdit] = React.useState(false);
 	const [mobile, setMobile] = React.useState(mobilePhone);
@@ -161,6 +166,15 @@ export const RequestOTP = ({
 							Get OTP
 						</button>
 					)}
+
+					<button
+						class={`button h-button is-danger is-outline is-elevated w-100 mt-4`}
+						style={{ border: "none", fontWeight: "bold", padding: 20 }}
+						onClick={close}
+					>
+					Go Back
+					</button>
+					
 				</div>
 			</div>
 		</div>
@@ -263,6 +277,7 @@ export const OTPConfirmation = ({
 	setValidatedMobile,
 	mobilePhone,
 	setMobilePhone,
+	close
 }) => {
 	const [loading, setLoading] = React.useState();
 	const [view, setView] = React.useState(0);
@@ -319,6 +334,7 @@ export const OTPConfirmation = ({
 			.post({ ...otpdata, security_code: otp }, "/verification/phone/verify")
 			.then((res) => {
 				if (res?.message === "Security code is valid.") {
+					setErrorMessage(res?.message)
 					setValidMobile(otpdata?.phone_number);
 					setValidatedMobile(otpdata?.phone_number);
 				} else {
@@ -361,6 +377,7 @@ export const OTPConfirmation = ({
 				sending={resending}
 				resendOTP={resendOTP}
 				errorMessage={errorMessage}
+				close={close}
 			/>
 		);
 	}
@@ -371,35 +388,43 @@ export const OTPConfirmation = ({
 			loading={loading}
 			mobilePhone={mobilePhone || rawPhone}
 			setMobilePhone={setMobilePhone}
+			close={close}
 		/>
 	);
 };
 
-export const TransferPay = ({
-	coin,
-	confirm,
-	refresh,
-	rawPhone,
-	validatedMobile,
-	setValidatedMobile,
-	setMobilePhone,
-}) => {
+const TransferPay = (props) => {
+	const {
+		confirm,
+		refresh,
+		setMobilePhone,
+	} = props;
+	const rawPhone = props?.data?.data?.phone;
+	const coin = props?.data?.paymentCoin || {};
+	const paymentStatus = props?.data?.paymentStatus
+	const validatedMobile = props?.data?.validatedMobile;
 	const [view, setView] = React.useState(0);
 	const [otpview, setOtpview] = React.useState(true);
-	// const [validatedMobile, setValidatedMobile] = React.useState();
 
-	const shorten = (address) => {
-		let start = address.slice(0, 8);
-		let end = address.substr(-8);
-		return `${start}....${end}`;
-	};
+	const navigate = useNavigate();
+
+	const setValidatedMobile = (m) => {
+		props.updateData({ validatedMobile: m })
+	}
+
+	const indicatePaid = () => {
+		setView(1);
+		props.continuousConfirmation(res => {
+			if (res?.terminate) navigate("/confirmation-view")
+		})
+	}
 
 	React.useEffect(() => {
 		if (validatedMobile) setOtpview(false);
 	}, [validatedMobile]);
 
 	return (
-		<div>
+		<KryptonPayCheckout>
 			<div className="field">
 				<div className="control">
 					{otpview && (
@@ -434,25 +459,26 @@ export const TransferPay = ({
 								>
 									<div style={{ width: `calc(100% - 25px)` }}>
 										<span>Amount</span>
-										<span>
+										<div style={{ fontSize: 16, fontWeight: "bold", overflowWrap: "break-word" }}>
 											{coin.amount} {coin.coin}
-										</span>
+										</div>
 									</div>
 									<CopyText icon={"copy"} text={coin.amount} />
 								</div>
-								<div style={{ display: "flex", alignItems: "flex-end" }}>
+								
+							</div>
+						</div>
+						<hr/>
+						<div style={{ display: "block" }}>
+									<CopyText icon={"copy"} text={coin?.address} />
 									<div style={{ width: `calc(100% - 25px)` }}>
 										<span>
 											To this {coin?.name}({coin?.coin}) Address:
 										</span>
-										{/* <span>{coin?.address?.address}</span> */}
-										<span>{shorten(coin?.address?.address)}</span>
+										<div style={{ fontWeight: "bold", fontSize: 16, overflowWrap: "break-word" }}>{coin?.address}</div>
+										{/* <span>{shorten(coin?.address)}</span> */}
 									</div>
-									<CopyText icon={"copy"} text={coin?.address?.address} />
 								</div>
-							</div>
-						</div>
-
 						<hr />
 						{view === 0 && (
 							<div className="media-flex-center">
@@ -473,7 +499,7 @@ export const TransferPay = ({
 									</div>
 									<ClockTiker callback={refresh} />
 									<button
-										onClick={() => setView(1)}
+										onClick={() => indicatePaid()}
 										className="button h-button is-elevated w-100"
 										style={{ fontWeight: "bold", marginTop: 10 }}
 									>
@@ -484,33 +510,45 @@ export const TransferPay = ({
 									className="h-icon x-large is-large is-squared qr-code"
 									style={{ width: 120, height: 120 }}
 								>
-									<QRCode size={115} value={`${coin?.address?.address}`} />
+									<QRCode size={115} value={`${coin?.address}`} />
 								</div>
 							</div>
 						)}
 						{(view === 0 && (
 							<div>
 								<p
-									style={{ fontSize: 11, textAlign: "justify", marginTop: 10 }}
+									style={{
+										fontSize: 11,
+										textAlign: "justify",
+										marginTop: 10,
+										fontWeight: "bold",
+									}}
 								>
 									Make sure you send {coin.coin} within 10 minutes. Afterwards
 									the rate will be refreshed and you will have to use the new
 									amount.
-									{/* <br/> */} Once you made the transfer please copy your
+									 Once you made the transfer please copy your
 									transaction ID (hash) & click the button above.
 								</p>
 							</div>
 						)) || (
 							<div>
-								<p style={{ fontSize: 20, textAlign: "center" }}>
+								<p style={{ fontSize: 14, textAlign: "center" }}>
 									{/* <div className="has-loader has-loader-active" style={{ height: 150, width: 150 }}>
 									<KPSpinner image={coin.coin} />
 									</div> */}
 									Krypton Pay is waiting to receive your {coin.coin}. Please be
-									patient, this may take upto 10mins or more
-									<a
+									patient, this may take upto 10mins or more.
+									{paymentStatus && (
+										<>
+										<hr/>
+										<p>{paymentStatus?.message}</p>
+										</>
+									)}
+									<button
 										className={`resend-button button h-button is-loading mt-2 ml-3`}
-									></a>
+									></button>
+
 									{/* Please copy and paste the Transaction ID (TxID or Hash) in the
 									field above and click the check icon to complete your payment. */}
 								</p>
@@ -519,9 +557,26 @@ export const TransferPay = ({
 					</div>
 				</div>
 			</div>
-		</div>
+			</KryptonPayCheckout>
 	);
 };
 
 // TBFrXN9ammNfFWCSxUgnb43PKRDGn149kV
 // TBFrXN9ammNfFWCSxUgnb43PKRDGn149kV
+
+
+const mapStateToProps = (state) => {
+	return { data: state.data };
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		updateData: (e) => dispatch(updateData(e)),
+		continuousConfirmation: (e) => dispatch(continuousConfirmation(e)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TransferPay);
+
+
+

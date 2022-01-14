@@ -1,24 +1,33 @@
 /* eslint-disable no-mixed-operators */
 import React from "react";
-import { Api } from "../utils/Api";
-import { CoinPicker } from "./CoinPicker";
+import { Api } from "../classes/Api";
 import { ConfimationView } from "./ConfimationView";
 import { KPLoader } from "./KPLoader";
 import { KPModal } from "./KPModal";
-import { TransferPay } from "./TransferPay";
-import { ClockTiker } from "./others";
-import { Socket } from "./WebSocket";
+import ClockTiker from "./others";
+import { Socket } from "../classes/WebSocket";
 import parsePhoneNumber, { formatNumber } from 'libphonenumber-js';
+import { toMoney } from "../utils/Functions";
+import { connect } from "react-redux";
+import { updateData, updatePrices } from "../Redux/Data/actions";
 
 const api = new Api();
-const ws = new Socket()
+// const ws = new Socket()
 
 export const formatPhoneNumberInt = (d) => {
 	if(d) return parsePhoneNumber(d, "NG").formatInternational();
 	return null;
 }
 
-export const KryptonPayCheckout = () => {
+const KryptonPayCheckout = (props) => {
+
+	const business = props?.data?.initialize?.merchant || {};
+	const others = props?.data?.initialize?.others || {};
+	const data = props?.data?.data || {};
+	const info = props?.data?.info
+
+	window.business = props?.data;
+
 	const defaultTitle = "Choose a coin to pay with:";
 	const [view, setView] = React.useState(0);
 	const [viewTitle, setViewTitle] = React.useState(defaultTitle);
@@ -28,16 +37,16 @@ export const KryptonPayCheckout = () => {
 	const [processStatus, setProcessStatus] = React.useState("");
 	const [coin, setCoint] = React.useState({ coin: "ETH", amount: 0.002833646 });
 
-	const [data, setData] = React.useState({ user: {} });
+	// const [data, setData] = React.useState({ user: {} });
 	const [config, setConfig] = React.useState({ mode: "AUTO" });
-	const [business, setBusiness] = React.useState({ name: "The Boolean Tech, Abuja" });
-	const [info, setInfo] = React.useState();
+
+	// const [info, setInfo] = React.useState();
 	const [coins, setCoins] = React.useState([]);
-	const [others, setOthers] = React.useState({});
 	const [validatedMobile, setValidatedMobile] = React.useState();
 
 	const setMobilePhone = (n) => {
-		setData({...data, phone: n})
+		// setData({...data, phone: n})
+		props.updateData({ data: { ...data, phone: n } });
 	}
 
 	React.useEffect(() => {
@@ -64,42 +73,41 @@ export const KryptonPayCheckout = () => {
 
 	const initialize = (d) => {
 		//setViewTitle(" ")
-		setInfo({
-			message: "Initializing...",
-			status: "processing",
-		});
-		setConfig({ mode: d?.viewmode });
-		api
-			.post({ amount: d?.amount }, `/business/${d?.key}/initialize`)
-			.then((res) => {
-				if (res?.error) {
-					setInfo({
-						noControls: false,
-						message: res?.data?.detail || res?.message,
-						status: "unknown",
-					});
-				} else {
-					setBusiness(res?.merchant);
-					setInfo({});
-					setCoins(res?.coins);
-					setOthers(res?.others);
-				}
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+		if (!business?.identifier){
+			props.updateData({ info: { message: "Initializing...", status: "processing" } })
+			props.updateData({ data: d });
+			setConfig({ mode: d?.viewmode });
+			props.updatePrices(d, null);
+		}
 	};
 
 	React.useEffect(() => {
 		window.parent.postMessage({ action: "initialize", krypton_pay: true }, "*");
 		window.onmessage = (e) => {
-			setData({...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {});
-			initialize(e?.data || {});
-			setLoading(false);
+			if ( e?.data?.phone && e?.data?.key ){
+				props.updateData({ data: {...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {} });
+				initialize(e?.data || {});
+				setLoading(false);
+			}
 		};
+
+		// const e = { 
+		// 	key: "pk_test_cb8daec88491a8021c0dcc48d461a0c49720ce1a", // Required
+		// 	amount: 50000, //In Fiat Currency | Required
+		// 	ref: "123456789024747", // Not Required
+		// 	email: "tobisholanke@gmail.com", // Required
+		// 	name: "Tobi Sholanke", // Not Required
+		// 	phone: "08064670816", // Not Required
+		// 	viewmode: "AUTO"
+		// }
+		// props.updateData({ data: {...e, phone: formatPhoneNumberInt(e?.phone) } || {} });
+		// // setData({...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {});
+		// initialize(e);
+		// setLoading(false);
 	}, []);
 
 	return (
+
 		<div id="huro-app" className="app-wrapper ">
 			<div className={`pageloader is-full ${loading ? "is-active" : ""}`}></div>
 			<div
@@ -146,7 +154,7 @@ export const KryptonPayCheckout = () => {
 										<span>
 											Pay{" "}
 											<strong>
-												{others?.fiat_currency} {others?.amount}
+												{toMoney(others?.amount, others?.fiat_currency+" ")}
 											</strong>
 										</span>
 									</div>
@@ -155,41 +163,14 @@ export const KryptonPayCheckout = () => {
 									{viewTitle || defaultTitle}
 									<span style={{ position: "absolute", right: 15 }}>
 										<ClockTiker
+											main={true}
 											styles={{}}
 											callback={refresh}
 											customWrapper={true}
 										/>
 									</span>
 								</p>
-
-								{view === 0 ? (
-									<CoinPicker
-										coins={coins}
-										setCoin={(e) => {
-											setView(1);
-											setCoint(e);
-											setViewTitle("Make a Payment");
-										}}
-									/>
-								) : view === 1 ? (
-									<TransferPay
-										refresh={refresh}
-										coin={coin}
-										confirm={startConfirmation}
-										validatedMobile={validatedMobile}
-										setValidatedMobile={setValidatedMobile}
-										setMobilePhone={setMobilePhone}
-										rawPhone={data?.phone}
-									/>
-								) : view === 2 ? (
-									<ConfimationView
-										coin={coin}
-										restartProcess={restartProcess}
-										changeViewTitle={setViewTitle}
-									/>
-								) : (
-									<view />
-								)}
+								{props?.children}
 							</>
 						)}
 					</KPModal>
@@ -198,3 +179,20 @@ export const KryptonPayCheckout = () => {
 		</div>
 	);
 };
+
+
+
+const mapStateToProps = (state) => {
+	return { data: state.data };
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		updateData: (e) => dispatch(updateData(e)),
+		updatePrices: (e, c) => dispatch(updatePrices(e, c)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(KryptonPayCheckout);
+
+
