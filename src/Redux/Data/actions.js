@@ -83,8 +83,14 @@ export const updateValidatedPhone = (input = {}, callback) => {
 								return coin;
 							}),
 						},
+
 						transactionId: res?.data?.identifier,
-						paymentCoin: { ...selectedCoinR, address: res?.data?.address },
+						paymentCoin: { 
+									...selectedCoinR, 
+									address: res?.data?.address,  
+									amount: res?.data?.amount_crypto,
+									coin: res?.data?.crypto_currency
+							},
 						info: {},
 						type: UPDATE
 					});
