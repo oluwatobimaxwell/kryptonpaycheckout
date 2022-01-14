@@ -4,7 +4,8 @@ import { getObject, getString } from "../utils/Functions";
 
 
 
-const apiBase = "http://localhost:8000";
+// const apiBase = "http://localhost:8000";
+const apiBase = "https://krypton-pay.herokuapp.com";
 
 export class Api {
   constructor(props) {

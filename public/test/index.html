@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Krypton Pay - Implementation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+        <style>
+            .crypton-pay{
+                height: 50px;
+                border-radius: 6px;
+                background: black;
+                color: white;
+                text-align: center;
+                padding: 15px 25px;
+                border: none;
+                cursor: pointer;
+            }
+            
+            .crypton-pay:hover{
+                background: #282727
+            }
+
+            .box {
+                width: max-content;
+                position: absolute;
+                top: calc(50% - 25px);
+                left: calc(50% - 150px);
+            }
+        </style>
+
+    </head>
+    <body >
+        <div class="box">
+        <button onclick="setUpView()" class="crypton-pay">
+          NGN50,000 - Pay with Crypto Currency
+        </button>
+        </div>
+        <script src="kryptonpay.js" crossorigin></script>
+    </body>
+</html>
