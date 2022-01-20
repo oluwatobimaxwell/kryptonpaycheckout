@@ -17,7 +17,7 @@ export class Socket {
         });
 
         this.socket.onclose = (event) => {
-            // this.reconnect()
+            this.reconnect()
         };
 
         this.socket.addEventListener("disconnected", event => {
