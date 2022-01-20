@@ -1,5 +1,5 @@
 
-const apiBase = window.location.hostname === "ws://localhost" ? "localhost:8000" : "wss://krypton-pay.herokuapp.com";
+const apiBase = window.location.hostname === "localhost" ? "ws://localhost:8000" : "wss://krypton-pay.herokuapp.com";
 const socketUrl = `${apiBase}/ws/transactions/`;
 export class Socket {
 
