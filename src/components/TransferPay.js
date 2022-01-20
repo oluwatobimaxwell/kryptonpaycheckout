@@ -425,8 +425,6 @@ const TransferPay = (props) => {
 
 	const indicatePaid = () => {
 		setView(1);
-		
-		socket.init({ identifier: props?.data?.transactionId, messageHandler });
 	}
 
 	React.useEffect(() => {
@@ -436,6 +434,7 @@ const TransferPay = (props) => {
 
 	React.useEffect(() => {
 		if(!coin?.coin) navigate("/")
+		else socket.init({ identifier: props?.data?.transactionId, messageHandler });
 	}, []);
 
 	return (
