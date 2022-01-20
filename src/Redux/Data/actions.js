@@ -1,9 +1,12 @@
 import { Api } from "../../classes/Api";
+import { retrieveFromStorage, saveToStorage } from "../../utils/Functions";
 import { UPDATE } from "./types";
 
 const api = new Api();
+const INITIAL_STORED_VALUE = retrieveFromStorage(UPDATE)||{};
 
 export const updateData = (data = {}) => {
+	saveToStorage({ name: UPDATE, value: { ...INITIAL_STORED_VALUE, ...data } })
 	return { ...data, type: UPDATE };
 };
 
@@ -39,21 +42,31 @@ export const updatePrices = (data = null, callback) => {
 export const updateValidatedPhone = (input = {}, callback) => {
 	return async (dispatch, getState) => {
 		// const _data = data || getState().data?.data;
-		const { data, initialize, validatedMobile, selectedCoin, paymentCoin, transactionId } = getState().data
+		const { data, initialize, validatedMobile, selectedCoin, paymentCoin, transactionId, updatingCoin } = getState().data
 		const selectedCoinR = input?.coin || selectedCoin;
 
-		if(paymentCoin && paymentCoin?.coin === selectedCoinR?.coin && paymentCoin?.address === selectedCoinR?.address && transactionId){
-			dispatch({ paymentCoin: selectedCoinR, type: UPDATE })
-			callback && callback(true)
-			return;
-		}
-		if(selectedCoinR?.address && transactionId){
-			dispatch({ paymentCoin: selectedCoinR, type: UPDATE })
-			callback && callback(true)
-			return;
+		const timeChange = (new Date().getTime() - paymentCoin?.time)/1000/60
+	
+		if (updatingCoin) return;
+		
+		
+
+		if(!input?.forceUpdate){
+
+			if(paymentCoin && paymentCoin?.coin === selectedCoinR?.coin && paymentCoin?.address === selectedCoinR?.address && transactionId && timeChange < 5){
+				dispatch({ paymentCoin: selectedCoinR, type: UPDATE })
+				callback && callback(true)
+				return;
+			}
+			if(selectedCoinR?.address && transactionId && timeChange < 5){
+				dispatch({ paymentCoin: selectedCoinR, type: UPDATE })
+				callback && callback(true)
+				return;
+			}
+
+			dispatch({ info: { message: "Updating transaction, please wait...", status: "processing" }, type: UPDATE })
 		}
 
-		dispatch({ info: { message: "Updating transaction, please wait...", status: "processing" }, type: UPDATE })
 
 		const payload = {
 			transactionId: transactionId,
@@ -64,17 +77,17 @@ export const updateValidatedPhone = (input = {}, callback) => {
 			user: {
 				email: data?.email,
 				name: data?.name,
-				phone: (input.validatedMobile || validatedMobile).replace(/ /g, ""),
-			},
-			// reference: data?.ref,
+				phone: (input.validatedMobile || validatedMobile || data?.phone).replace(/ /g, ""),
+			}
 		};
+
+		dispatch({ updatingCoin: true, type: UPDATE });
 
 		api.post({ ...payload }, `/transaction/gateway/start_payment/`)
 			.then((res) => {
 				
 				if (res?.data?.address) {
 					const coins = initialize?.coins || [];
-
 					dispatch({
 						initialize: {
 							...initialize,
@@ -83,24 +96,25 @@ export const updateValidatedPhone = (input = {}, callback) => {
 								return coin;
 							}),
 						},
-
 						transactionId: res?.data?.identifier,
+
 						paymentCoin: { 
-									...selectedCoinR, 
-									address: res?.data?.address,  
-									amount: res?.data?.amount_crypto,
-									coin: res?.data?.crypto_currency
+								...selectedCoinR, 
+								address: res?.data?.address,  
+								amount: res?.data?.amount_crypto,
+								rate: res?.data?.rate,
+								coin: res?.data?.crypto_currency,
+								time: new Date().getTime()
 							},
 						info: {},
+						next_refresh: res?.next_refresh,
+						updatingCoin: false,
 						type: UPDATE
 					});
 					callback && callback(true)
 				} else {
-					alert(
-						"Unable to generate deposit address for this transaction, please try again later or contact us.",
-					);
+					dispatch({ updatingCoin: false, info: { message: "Unable to generate deposit address for this transaction, please try again later or contact us.", status: "failed" }, type: UPDATE })
 				}
-				dispatch({ info: {}, type: UPDATE })
 
 			}).catch((err) => {
 				console.log(err);
@@ -130,7 +144,16 @@ export const continuousConfirmation = (callback) => {
 		}, 1000 * 60);
 	}
 }
-
+function getAllSubstrings(str) {
+	var i, j, result = [];
+  
+	for (i = 0; i < str.length; i++) {
+		for (j = i + 1; j < str.length + 1; j++) {
+			result.push(str.slice(i, j));
+		}
+	}
+	return result;
+  }
 export const updatePaymentAddress = (
 	{ index = -1, selectedCoin = null, pageTitle = "" },
 	callback,

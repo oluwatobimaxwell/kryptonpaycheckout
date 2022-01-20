@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export function shortMoney(value) {
   const num = Number(value);
   if (num >= 1000000000) {
@@ -12,7 +13,7 @@ export function shortMoney(value) {
   return num;
 }
 
-export const toMoney = (amount = 0, symbol, formatter) => {
+export const toMoney = (amount = 0, symbol="₦", formatter) => {
   var money = (Math.abs(amount) || 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
   if(formatter) return formatter((symbol || "₦"), money);
   return (
@@ -38,6 +39,14 @@ export function storeObject(data) {
   saveData.time = new Date().getTime();
   localStorage.saveData = JSON.stringify(saveData);
   return true;
+}
+
+export const getIcon = (icon, attr={}) => {
+  try {
+      return feather.icons[icon].toSvg(attr)
+  } catch (error) {
+      return ""
+  }
 }
 
 // retrieve data from local storage
@@ -143,3 +152,28 @@ export const toDataURL = url => fetch(url)
     return message;
   }
   
+
+
+// save data to local storage
+export function saveToStorage(data) {
+  try {
+      var saveData = JSON.parse(localStorage.saveData || null) || {};
+      saveData[data.name] = data.value;
+      saveData.time = new Date().getTime();
+      localStorage.saveData = JSON.stringify(saveData);
+      return true;
+  } catch (error) {
+      console.log(error?.message)
+  }
+}
+
+export function clearStorage() {
+  localStorage.saveData = JSON.stringify({});
+  return true;
+}
+
+// retrieve data from local storage
+export function retrieveFromStorage(key) {
+  var saveData = JSON.parse(localStorage.saveData || null) || {};
+  return saveData[key] || null;
+}

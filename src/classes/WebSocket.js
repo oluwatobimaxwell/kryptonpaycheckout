@@ -1,44 +1,38 @@
 
-const socketUrl = `ws://localhost:8000/ws/krypton-waiting/1`;
-// lo = new WebSocket("ws://localhost:8000/ws/live-score/1?token=[YOUR TOKEN]");
+const apiBase = window.location.hostname === "ws://localhost" ? "localhost:8000" : "wss://krypton-pay.herokuapp.com";
+const socketUrl = `${apiBase}/ws/transactions/`;
 export class Socket {
 
-    constructor(props) {
-        if (props) {
-            const { socket } = props;
-            if (socket) this.socket = socket;
-        }
-    }
+    init({ identifier, callback, messageHandler }) {
+        this.identifier = identifier;
+        this.reconnect(identifier);
 
-    init({ transactionData, callback, messageHandler }) {
-
-        this.socket = new window.WebSocket(socketUrl);
         this.socket.addEventListener("open", async () => {
-            this.send({ 
-                    message: { channel: "pendingPayment", transactionData }, 
-                    callback
-            });
+            messageHandler({ message: "connected" })
         });
 
         this.socket.addEventListener("message", event => {
-            console.log(event?.data)
             const message = JSON.parse(event?.data?.toString());
             messageHandler && messageHandler(message);
         });
 
         this.socket.onclose = (event) => {
-            alert("Connection Closed");
-            console.log(event)
+            // this.reconnect()
         };
 
         this.socket.addEventListener("disconnected", event => {
-            // handle disconnection here
-            const message = JSON.parse(event.data.toString());
-            console.log(message)
-            alert("Disconnected");
+            this.reconnect()
         });
 
         return this.socket;
+    }
+
+    close = () => {
+        this.socket && this.socket.close()
+    }
+
+    reconnect = (identifier=null) => {
+        this.socket = new window.WebSocket(`${socketUrl}${identifier||this.identifier}`);
     }
 
     send({message, callback}) {

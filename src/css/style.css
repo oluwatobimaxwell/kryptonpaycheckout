@@ -1,5 +1,6 @@
 *{
-    font-size: 12px;
+    font-size: 14px !important;
+	font-family: 'Source Sans Pro', sans-serif !important;
 }
 
 .h-modal .modal-content .modal-card .modal-card-foot {
@@ -18,7 +19,6 @@
 	height: 35px;
 	line-height: 1.1;
 	font-size: 0.95rem;
-	font-family: "Roboto", sans-serif;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 	border: 1px solid #e0e0e0;
@@ -114,7 +114,6 @@ img.crypto-icon{
 }
 
 /* div.media-flex-center .flex-meta span:first-child, div.media-flex-center .flex-meta > a:first-child {
-    font-family: "Roboto", sans-serif;
 	font-size: 0.85rem;
 	color: #6a6c72;
 	font-weight: lighter;
@@ -571,3 +570,27 @@ body.is-dark .glass-box {
 	border-left: 1.5px solid #3b3a3b !important;
 	border-right: 1.5px solid #3b3a3b !important;
 }
+
+.button.h-button{
+	/* border: none !important; */
+	height: 45px;
+	font-weight: bold;
+}
+
+.button.h-button.no-border{
+	border: none !important;
+}
+
+.modal.is-small .modal-content {
+	width: 100%;
+	max-width: 450px !important;
+}
+
+
+
+@page {
+	size: A4;
+	margin: 20mm;
+}
+  
+  

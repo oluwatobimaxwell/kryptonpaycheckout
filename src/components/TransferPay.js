@@ -3,8 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import { processError, storeObject, toMoney } from "../utils/Functions";
-import ClockTiker from "./others";
+import { getIcon, processError, storeObject, toMoney } from "../utils/Functions";
 import { SvgIcon } from "./SvgIcon";
 import QRCode from "react-qr-code";
 import "react-phone-input-2/lib/style.css";
@@ -17,6 +16,9 @@ import { connect } from "react-redux";
 import { continuousConfirmation, updateData } from "../Redux/Data/actions";
 import KryptonPayCheckout from './KryptonPayCheckout';
 import { useNavigate } from "react-router-dom";
+import ClockTiker from "./others";
+import { v4 } from "uuid";
+import { Socket } from "../classes/WebSocket";
 
 const api = new Api();
 
@@ -404,37 +406,50 @@ const TransferPay = (props) => {
 	const paymentStatus = props?.data?.paymentStatus
 	const validatedMobile = props?.data?.validatedMobile;
 	const [view, setView] = React.useState(0);
-	const [otpview, setOtpview] = React.useState(true);
-
-	const navigate = useNavigate();
+	const [otpview, setOtpview] = React.useState(false);
+	const navigate = useNavigate()
+	const socket = new Socket()
 
 	const setValidatedMobile = (m) => {
 		props.updateData({ validatedMobile: m })
 	}
 
+
+	const messageHandler = (message) => {
+		if(message?.message?.identifier){
+			props.updateData({ paymentStatus: message?.message });
+			navigate("/confirmation-view")
+			socket.close()
+		}
+	}
+
 	const indicatePaid = () => {
 		setView(1);
-		props.continuousConfirmation(res => {
-			if (res?.terminate) navigate("/confirmation-view")
-		})
+		
+		socket.init({ identifier: props?.data?.transactionId, messageHandler });
 	}
 
 	React.useEffect(() => {
 		if (validatedMobile) setOtpview(false);
 	}, [validatedMobile]);
 
+
+	React.useEffect(() => {
+		if(!coin?.coin) navigate("/")
+	}, []);
+
 	return (
 		<KryptonPayCheckout>
 			<div className="field">
 				<div className="control">
-					{otpview && (
+					{/* {otpview && (
 						<OTPConfirmation
 							rawPhone={rawPhone}
 							setMobilePhone={setMobilePhone}
 							coin={coin}
 							setValidatedMobile={(m) => setValidatedMobile(m)}
 						/>
-					)}
+					)} */}
 
 					<div className={`l-card ${otpview && "bg-blur"}`}>
 						<div className="media-flex-center">
@@ -446,7 +461,7 @@ const TransferPay = (props) => {
 								/>
 							</div>
 
-							<div className="flex-meta w-100">
+							<div className="flex-meta w-100 ml-5">
 								<h4 style={{ marginBottom: 10, fontSize: 12 }}>
 									Send the exact amount:{" "}
 								</h4>
@@ -459,11 +474,36 @@ const TransferPay = (props) => {
 								>
 									<div style={{ width: `calc(100% - 25px)` }}>
 										<span>Amount</span>
-										<div style={{ fontSize: 16, fontWeight: "bold", overflowWrap: "break-word" }}>
-											{coin.amount} {coin.coin}
+										<div style={{ fontSize: 16, overflowWrap: "break-word" }}>
+											{coin.amount} {coin.coin} {" "}
+											{view === 0 && (
+												<small style={{ fontWeight: "bold", marginLeft: 15 }}>
+													<ClockTiker
+														key={v4()}
+														main={true}
+														styles={{}}
+														updatePrice={true}
+														// callback={refresh}
+														customWrapper={true}
+													/>
+												</small>
+											)}
 										</div>
 									</div>
 									<CopyText icon={"copy"} text={coin.amount} />
+								</div>
+								<div
+									style={{
+										display: "flex",
+										alignItems: "flex-end",
+									}}
+								>
+									<div style={{ width: `calc(100% - 25px)` }}>
+										<span>Rate</span>
+										<div style={{ fontSize: 16, overflowWrap: "break-word" }}>
+										{coin?.coin} 1 ={" "}{toMoney(coin?.rate, coin?.fiat_currency + " ")}
+										</div>
+									</div>
 								</div>
 								
 							</div>
@@ -478,65 +518,74 @@ const TransferPay = (props) => {
 										<div style={{ fontWeight: "bold", fontSize: 16, overflowWrap: "break-word" }}>{coin?.address}</div>
 										{/* <span>{shorten(coin?.address)}</span> */}
 									</div>
+									{view === 0 && (
+										<div className="w-100">
+										<button
+											onClick={() => { navigate("/") }}
+											className="button is-danger h-button is-elevated no-border"
+											style={{ fontWeight: "bold", marginTop: 10, width: '30%', marginRight: 10 }}
+											dangerouslySetInnerHTML={{ __html: getIcon("chevron-left") +" BACK" }}
+										/>
+										<button
+											onClick={() => indicatePaid()}
+											className="button is-primary h-button is-elevated no-border"
+											style={{ fontWeight: "bold", marginTop: 10, width: '67%' }}
+										>
+											I HAVE SENT {coin.coin}
+										</button>
+										</div>
+									)||(
+										<hr/>
+									)}
 								</div>
-						<hr />
+						{/* <hr style={{ marginTop: 15, marginBottom: 0 }} /> */}
 						{view === 0 && (
-							<div className="media-flex-center">
+							<div className="media-flex-center mt-3">
+							
 								<div
-									className="flex-meta"
-									style={{
-										width: `calc(100% - 120px)`,
-										marginLeft: 0,
-										paddingRight: 10,
-									}}
+									className="h-icon x-large is-large is-squared "
+									style={{ 
+										minWidth: 90, height: 90, marginRight: 15, marginTop: 15, 
+										borderRadius: 0,
+										background: props?.data?.mode === "dark" ? "#323236" : "#fff",
+										border: `1px solid ${props?.data?.mode === "dark" ? "#9898a0" : "#000"}`
+									 }}
 								>
-									<div>
-										<span>Exchange Rate:</span>
-										<span>
-											{coin?.coin} 1 ={" "}
-											{toMoney(coin?.rate, coin?.fiat_currency + " ")}
-										</span>
-									</div>
-									<ClockTiker callback={refresh} />
-									<button
-										onClick={() => indicatePaid()}
-										className="button h-button is-elevated w-100"
-										style={{ fontWeight: "bold", marginTop: 10 }}
-									>
-										I HAVE SENT {coin.coin}
-									</button>
+									<QRCode 
+										bgColor={props?.data?.mode === "dark" ? "#323236" : "#fff"} 
+										fgColor={props?.data?.mode === "dark" ? "#9898a0" : "#000"} 
+										size={80} 
+										value={`${coin?.address}`} 
+									/>
 								</div>
+								<style>
+									{`.instruc {
+										font-size: 12.5px !important;
+									}`}
+								</style>
 								<div
-									className="h-icon x-large is-large is-squared qr-code"
-									style={{ width: 120, height: 120 }}
-								>
-									<QRCode size={115} value={`${coin?.address}`} />
-								</div>
-							</div>
-						)}
-						{(view === 0 && (
-							<div>
-								<p
+									className="instruc"
 									style={{
-										fontSize: 11,
 										textAlign: "justify",
 										marginTop: 10,
-										fontWeight: "bold",
 									}}
 								>
 									Make sure you send {coin.coin} within 10 minutes. Afterwards
 									the rate will be refreshed and you will have to use the new
 									amount.
-									 Once you made the transfer please copy your
-									transaction ID (hash) & click the button above.
-								</p>
+									 Once transfer is completed please 
+									 click I've Sent {coin?.coin}, and we will verify your payment. Thank You!
+								</div>
+								<div>
+								
 							</div>
+							</div>
+						)}
+						{(view === 0 && (
+							<div/>
 						)) || (
 							<div>
-								<p style={{ fontSize: 14, textAlign: "center" }}>
-									{/* <div className="has-loader has-loader-active" style={{ height: 150, width: 150 }}>
-									<KPSpinner image={coin.coin} />
-									</div> */}
+								<p style={{ fontSize: 14, textAlign: "center", marginTop: 15 }}>
 									Krypton Pay is waiting to receive your {coin.coin}. Please be
 									patient, this may take upto 10mins or more.
 									{paymentStatus && (
@@ -547,10 +596,7 @@ const TransferPay = (props) => {
 									)}
 									<button
 										className={`resend-button button h-button is-loading mt-2 ml-3`}
-									></button>
-
-									{/* Please copy and paste the Transaction ID (TxID or Hash) in the
-									field above and click the check icon to complete your payment. */}
+									/>
 								</p>
 							</div>
 						)}

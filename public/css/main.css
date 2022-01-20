@@ -17084,7 +17084,7 @@ a.has-text-danger-dark:focus {
 	font-weight: 800;
 }
 .subtitle {
-	font-family: "Roboto", sans-serif;
+	/* /* font-family: "Roboto", sans-serif; */ */
 	color: #283252;
 }
 .subtitle.is-narrow {
@@ -17103,7 +17103,7 @@ a.has-text-danger-dark:focus {
 	font-weight: 800;
 }
 p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 300;
 	color: #a2a5b9;
 }
@@ -17136,7 +17136,7 @@ body.is-dark a.dark-inverted-hover:hover {
 	color: #797bf2 !important;
 }
 .is-font {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .is-font-alt {
 	font-family: "Montserrat", sans-serif !important;
@@ -18687,7 +18687,7 @@ body.is-curved {
 	.notification-item
 	.user-content {
 	text-align: left;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .toolbar
 	.toolbar-notifications
@@ -19111,7 +19111,7 @@ body.is-dark .circular-menu .floating-btn {
 	.dropdown-head
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .mobile-navbar
 	.navbar-brand
@@ -19905,7 +19905,7 @@ body.is-dark
 	height: 38px;
 }
 .webapp-navbar .webapp-navbar-inner .left .brand span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 	color: #999;
 	letter-spacing: 1px;
@@ -19974,7 +19974,7 @@ body.is-dark
 	.dropdown-block
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .webapp-navbar
 	.webapp-navbar-inner
@@ -20106,7 +20106,7 @@ body.is-dark
 	.centered-link
 	span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.65rem;
 	color: #999;
 	text-transform: uppercase;
@@ -20786,7 +20786,7 @@ body.is-dark
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 	font-weight: 600;
 	color: #283252;
@@ -21346,7 +21346,7 @@ body.is-dark
 	.dropdown-head
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .webapp-navbar
 	.webapp-navbar-inner
@@ -22533,7 +22533,7 @@ body.is-dark
 	li
 	a
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 }
 .webapp-subnavbar
@@ -22709,7 +22709,7 @@ body.is-dark
 	height: 38px;
 }
 .webapp-navbar-clean .webapp-navbar-inner .left .brand span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 	color: #999;
 	letter-spacing: 1px;
@@ -22782,7 +22782,7 @@ body.is-dark
 	.dropdown-block
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .webapp-navbar-clean
 	.webapp-navbar-inner
@@ -22941,7 +22941,7 @@ body.is-dark
 	.dropdown-head
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .webapp-navbar-clean
 	.webapp-navbar-inner
@@ -23041,7 +23041,7 @@ body.is-dark
 .webapp-navbar-clean .webapp-navbar-lower.is-centered .center .welcome-text {
 	font-size: 0.9rem;
 	font-weight: 500;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .webapp-navbar-clean .webapp-navbar-lower.is-between .right,
@@ -23368,7 +23368,7 @@ body.is-dark
 	left: -29px;
 	right: 0;
 	margin: 0 auto;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.5rem;
 	font-weight: 500;
 	color: #a2a5b9;
@@ -23642,7 +23642,7 @@ body.is-dark
 	.dropdown-head
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .main-sidebar
 	.sidebar-inner
@@ -24125,7 +24125,7 @@ body.is-dark .sidebar-panel .inner {
 	.dropdown-block
 	.meta {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .sidebar-panel.is-generic
 	.subpanel-header
@@ -24288,7 +24288,7 @@ body.is-dark .sidebar-panel .inner {
 }
 .sidebar-panel.is-generic .inner li.has-children ul li {
 	height: 32px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .sidebar-panel.is-generic .inner li.has-children ul li.is-active .is-submenu {
 	font-weight: 500;
@@ -24307,7 +24307,7 @@ body.is-dark .sidebar-panel .inner {
 	display: -ms-flexbox;
 	display: flex;
 	font-weight: 400;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -24324,7 +24324,7 @@ body.is-dark .sidebar-panel .inner {
 	margin-right: 10px;
 }
 .sidebar-panel.is-generic .inner li.has-children ul li .is-submenu > span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .sidebar-panel.is-generic .inner li.has-children ul li .is-submenu svg {
 	display: none;
@@ -24345,7 +24345,7 @@ body.is-dark .sidebar-panel .inner {
 	margin-right: 4px;
 }
 .sidebar-panel.is-generic .inner li a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: block;
 	width: 100%;
 	padding: 0 20px;
@@ -26189,7 +26189,7 @@ body.is-dark
 	.project-inner
 	.meta
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.9rem;
 }
@@ -26286,7 +26286,7 @@ body.is-dark
 	.project-foot
 	.foot-stats
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .right-panel-wrapper.is-activity .right-panel .right-panel-body .icon-timeline {
@@ -26531,7 +26531,7 @@ body.is-dark
 }
 .right-panel-wrapper.is-task .right-panel .right-panel-body .task-group h5 {
 	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	color: #a2a5b9;
 }
@@ -26559,7 +26559,7 @@ body.is-dark
 	p
 	a {
 	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 0.75rem;
 	color: #a2a5b9;
@@ -26715,7 +26715,7 @@ body.is-dark
 	.task-stats
 	a {
 	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 0.75rem;
 	color: #671cc9;
@@ -27032,7 +27032,7 @@ body.is-dark
 	width: 48px;
 }
 .right-panel-wrapper.is-search .right-panel .right-panel-body .recent {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 30px;
 	padding: 0 20px;
 }
@@ -27651,7 +27651,7 @@ body .dark-image-block {
 	top: 6px;
 } /*! _buttons.scss | Huro | Css ninja 2020-2021 */
 .button {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
@@ -27720,7 +27720,7 @@ body.is-dark .button.h-action.is-hoverable:hover {
 	height: 38px;
 	line-height: 1.1;
 	font-size: 0.95rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
@@ -27977,7 +27977,7 @@ body.is-dark .button.h-action.is-active {
 }
 .media-flex .flex-meta span:nth-child(2),
 .media-flex .flex-meta > a:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.9rem;
 }
@@ -28034,7 +28034,7 @@ body.is-dark .button.h-action.is-active {
 }
 .media-flex-center .flex-meta span:nth-child(2),
 .media-flex-center .flex-meta > a:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.9rem;
 }
@@ -45089,7 +45089,7 @@ body.is-dark .l-card-advanced .avatar-stack .h-avatar .avatar.is-more .inner {
 	object-fit: cover;
 }
 .card.h-card .card-footer a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 body.is-dark .card.h-card {
@@ -45111,7 +45111,7 @@ body.is-dark .card.h-card .h-avatar .badge {
 .content ol,
 .content ul {
 	color: #283252;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .content ol.is-light,
 .content ul.is-light {
@@ -45401,7 +45401,7 @@ select:focus {
 	border-color: #dedede !important;
 }
 .field.is-horizontal .field-label .label {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9 !important;
 	font-weight: 400;
@@ -45416,7 +45416,7 @@ select:focus {
 }
 .field.has-addons .control .select.currency-select select,
 .field.is-grouped .control .select.currency-select select {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 }
 .field.has-addons .control .select select,
@@ -45451,7 +45451,7 @@ select:focus {
 	box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
 .field > label {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9 !important;
 }
@@ -45644,7 +45644,7 @@ select:focus {
 	max-width: 100px;
 }
 .control .search-results .placeholder-wrap .placeholder-content h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	color: #283252;
 	padding: 0;
@@ -45683,7 +45683,7 @@ select:focus {
 	line-height: 1.3;
 }
 .control .search-results .search-result .meta span:first-child {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	font-size: 0.9rem;
 	color: #283252;
@@ -46085,7 +46085,7 @@ body.is-dark .search-results .search-result .meta span:first-child {
 	.template-wrapper
 	.entry-text
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: block;
 }
 .is-autocomplete
@@ -46646,7 +46646,7 @@ body.is-dark .filepond-square-wrap .filepond--drop-label label {
 	background-color: #e8e8e8;
 	border-color: #e8e8e8;
 	color: #283252;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	padding: 4px 10px 5px 10px;
 }
 .choices .choices__inner .choices__list .choices__item:before {
@@ -46750,7 +46750,7 @@ body.is-dark .choices .choices__list--dropdown .choices__item.is-highlighted {
 	border-color: #ededed;
 }
 .h-select .select-box span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	position: relative;
 	top: 0;
@@ -46907,7 +46907,7 @@ body.is-dark
 	color: #ccc !important;
 }
 .is-combo .combo-label {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -48398,14 +48398,14 @@ body.is-dark .animated-checkbox .checkmark-wrap .shadow-circle {
 	color: #283252;
 }
 .checkboxes-list .list-item .item-meta span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
 .radio,
 .checkbox {
 	position: relative;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	cursor: pointer;
 	padding: 1em;
 }
@@ -48989,7 +48989,7 @@ body.is-dark .h-toggle .toggler .inactive {
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	opacity: 0;
 	pointer-events: none;
@@ -49625,7 +49625,7 @@ body.is-dark .action-link:after {
 	color: #283252;
 }
 .user-list .user-list-info .position {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 12px;
 	color: #a2a5b9;
 }
@@ -49907,7 +49907,7 @@ body.is-dark .tag.is-primary.is-light {
 	background: #f6f7f9;
 	padding: 1.5rem;
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 body.is-dark .single-accordion {
 	background: #2d2d31;
@@ -49994,7 +49994,7 @@ body.is-dark .single-accordion .accordion-content {
 	display: none;
 	padding: 0 20px 20px 20px;
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .collapse .collapse-content p:not(:last-child) {
 	margin-bottom: 12px;
@@ -50145,7 +50145,7 @@ body.is-dark .collapse .collapse-header .collapse-icon {
 	margin-bottom: 10px;
 }
 .breadcrumb ul li a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .breadcrumb ul li a:hover {
@@ -50178,7 +50178,7 @@ body.is-dark .breadcrumb ul li a:hover {
 	padding: 16px;
 }
 .pika-single .pika-lendar .pika-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 }
 .pika-single .pika-lendar .pika-title .pika-prev,
@@ -50189,7 +50189,7 @@ body.is-dark .breadcrumb ul li a:hover {
 }
 .pika-single .pika-lendar .pika-table thead th {
 	font-weight: 400;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 }
 .pika-single .pika-lendar .pika-table tbody td.is-selected .pika-day,
@@ -50650,7 +50650,7 @@ body.is-dark .datetimepicker-footer {
 	padding-left: 34px;
 	line-height: 2;
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-transition: backgroundImage 0.25s;
 	transition: backgroundImage 0.25s;
 }
@@ -50823,12 +50823,12 @@ body.is-dark .is-clock-timepicker .control .chevron {
 	color: #283252;
 }
 .dropdown.is-spaced .dropdown-item.is-media .meta span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.9rem;
 }
 .dropdown .is-trigger .button {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .dropdown .is-trigger .button:focus {
 	-webkit-box-shadow: none;
@@ -51108,7 +51108,7 @@ body.is-dark .child-dropdown .inner ul li .text span:first-child {
 	color: #aaaab3 !important;
 } /*! _editors.scss | Huro | Css Ninja 2020-2021 */
 .note-modal .note-modal-content .note-modal-header h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.2rem !important;
 	font-weight: 500;
 	color: #283252;
@@ -51120,7 +51120,7 @@ body.is-dark .child-dropdown .inner ul li .text span:first-child {
 	padding: 30px;
 }
 .note-modal .note-modal-content .note-modal-body .form-group label {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1rem;
 	font-weight: 400;
 	color: #a2a5b9;
@@ -51827,12 +51827,12 @@ body.is-dark .apexcharts-plot-series > line {
 body.is-dark .apexcharts-text,
 body.is-dark .apexcharts-yaxis-title-text {
 	fill: #aaaab3;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 400;
 }
 body.is-dark .apexcharts-data-labels text {
 	fill: #fafafa;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 400;
 }
 body.is-dark .apexcharts-bar-area {
@@ -51872,7 +51872,7 @@ body.is-dark
 	color: #aaaab3 !important;
 }
 body.is-dark .apexcharts-tooltip * {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: inherit;
 }
 body.is-dark .apexcharts-tooltip .apexcharts-yaxistooltip-text {
@@ -51896,7 +51896,7 @@ body.is-dark .apexcharts-xaxistooltip.apexcharts-xaxistooltip-top::before {
 	border-top-color: #404046;
 }
 body.is-dark .apexcharts-xaxistooltip * {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: inherit;
 }
 .bb-title {
@@ -52009,7 +52009,7 @@ body.is-dark .bb-tooltip .bb-tooltip-detail .bb-tooltip-value span {
 	width: 5rem;
 }
 .infinite-scroll-loader .infinite-scroll-loader-inner .loader-end span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .has-loader {
@@ -52792,7 +52792,7 @@ body.is-dark .loads {
 	color: #283252;
 }
 .section-placeholder .placeholder-content p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1rem;
 	color: #a2a5b9;
 	max-width: 280px;
@@ -53727,7 +53727,7 @@ body.is-dark .webui-popover .loader-overlay {
 	.popover-fake-avatar
 	span {
 	font-size: 1.1rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-transform: uppercase;
 	font-weight: 500;
 	color: #283252;
@@ -54242,7 +54242,7 @@ body.is-dark
 	padding: 0;
 }
 .webui-popover.webui-popover-default .webui-popover-content .popover-body p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -56154,7 +56154,7 @@ body.is-dark .snack .snack-text {
 	color: #671cc9;
 }
 .tabs li a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	border-bottom-width: 2px;
 	color: #cecece;
 	border-bottom-color: transparent;
@@ -56270,7 +56270,7 @@ body.is-dark .tabs li.is-active a {
 .tabs-wrapper.is-slider .tabs li a,
 .tabs-wrapper-alt.is-slider .tabs li a {
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	height: 40px;
 	border-bottom: none;
 	position: relative;
@@ -56363,7 +56363,7 @@ body.is-dark .tabs li.is-active a {
 .tabs-wrapper.is-triple-slider .tabs li a,
 .tabs-wrapper-alt.is-triple-slider .tabs li a {
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 400;
 	height: 40px;
 	border-bottom: none;
@@ -56617,7 +56617,7 @@ body.is-dark .tabs-wrapper.is-triple-slider .tabs li.is-active a {
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 0 10px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .flex-table .flex-table-item .flex-table-cell.is-grow {
 	-webkit-box-flex: 2;
@@ -56842,7 +56842,7 @@ body.is-dark .tabs-wrapper.is-triple-slider .tabs li.is-active a {
 	display: block !important;
 	font-size: 0.8rem;
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .flex-table .flex-table-item .flex-table-cell .dot-levels {
 	display: -webkit-box;
@@ -56936,7 +56936,7 @@ body.is-dark
 }
 .flex-pagination .pagination-list li .pagination-link {
 	background: #fff;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9em;
 }
 .flex-pagination .pagination-list li .pagination-link.is-current {
@@ -57008,7 +57008,7 @@ body.is-dark .flex-table-wrapper {
 	margin-bottom: 3rem;
 }
 .table tbody th {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 }
 .table tbody th.is-media {
@@ -57023,7 +57023,7 @@ body.is-dark .flex-table-wrapper {
 	justify-content: flex-end;
 }
 .table tbody td {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	vertical-align: middle;
 }
 .table tbody td:not(:first-child) {
@@ -57231,7 +57231,7 @@ body.is-dark .datatable-toolbar .field .control .button:hover {
 	padding: 16px 10px;
 }
 .pagination.datatable-pagination .datatable-info {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .pagination.datatable-pagination ul li {
@@ -57265,7 +57265,7 @@ body.is-dark .datatable-toolbar .field .control .button:hover {
 	box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
 .pagination.datatable-pagination ul li a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	font-weight: 500;
 	color: #283252;
@@ -57438,7 +57438,7 @@ body.is-dark .pagination.datatable-pagination ul li a {
 	font-size: 8px;
 }
 .table-wrapper .table.is-datatable .status span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -57458,7 +57458,7 @@ body.is-dark .pagination.datatable-pagination ul li a {
 	display: block;
 	font-size: 0.8rem;
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .table-wrapper .table.is-datatable .flex-media .meta span:first-child {
 	font-family: "Montserrat", sans-serif;
@@ -58249,7 +58249,7 @@ body.is-dark .hint--primary.hint--right:before {
 	.timeline-item
 	.date {
 	width: 80px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-align: right;
 }
 .timeline-wrapper
@@ -58738,7 +58738,7 @@ body.is-dark .circle-chart__background {
 	box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 	border: 1px solid #ededed;
 	border-radius: 500px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	z-index: 99;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -59324,7 +59324,7 @@ body.is-dark .circle-chart__background {
 	font-weight: 300;
 }
 .section .section-title h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 1.4rem;
 	font-weight: 300;
@@ -59333,7 +59333,7 @@ body.is-dark .circle-chart__background {
 	font-size: 1.2rem;
 }
 .section .side-feature h2 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 300;
 }
 .landing-page-wrapper.is-dark .section.section-focus {
@@ -59380,7 +59380,7 @@ body.is-dark .circle-chart__background {
 	color: #283252;
 }
 .cta-block .head-text p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.1rem;
 	color: #a2a5b9;
 }
@@ -59446,7 +59446,7 @@ body.is-dark .circle-chart__background {
 	color: #283252;
 }
 .huro-demos .demo-section .demo-section-title .title-meta p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.1rem;
 	color: #a2a5b9;
 }
@@ -59499,7 +59499,7 @@ body.is-dark .circle-chart__background {
 	right: 10px;
 	background: red;
 	color: #fff;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	padding: 6px 16px;
 	border-radius: 8px;
 	text-transform: uppercase;
@@ -59540,7 +59540,7 @@ body.is-dark .circle-chart__background {
 }
 .huro-demo-wrapper .demo-title {
 	color: #fff;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.5rem;
 	font-weight: 600;
 	padding-bottom: 0;
@@ -59575,7 +59575,7 @@ body.is-dark .circle-chart__background {
 	transition-delay: 0.2s;
 }
 .huro-demo-wrapper .demo-link a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #fff;
 	font-size: 1rem;
 	margin-left: 8px;
@@ -59608,7 +59608,7 @@ body.is-dark .circle-chart__background {
 	margin-bottom: 4px;
 }
 .component-features .media-flex .flex-meta p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	line-height: 1.4;
 }
 .component-box {
@@ -59718,7 +59718,7 @@ body.is-dark .circle-chart__background {
 	border-bottom: 1px solid #e3e3e3;
 }
 .huro-footer .footer-head .head-text h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.8rem;
 	color: #283252;
 }
@@ -59757,7 +59757,7 @@ body.is-dark .circle-chart__background {
 	padding-bottom: 10px;
 }
 .huro-footer .footer-body .footer-column .column-item a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .huro-footer .footer-body .footer-column .column-item a:hover {
@@ -59791,7 +59791,7 @@ body.is-dark .circle-chart__background {
 	height: 36px;
 }
 .huro-footer .footer-copyright {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	padding: 4rem 0 2rem 0;
 }
@@ -60130,7 +60130,7 @@ body.is-dark .circle-chart__background {
 	align-items: center;
 	margin: 10px auto;
 	max-width: 200px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	border: 2px solid #d3f4ed;
 	border-radius: 100px;
 	background: #d3f4ed;
@@ -60146,7 +60146,7 @@ body.is-dark .circle-chart__background {
 }
 .cta-wrapper .cta-title .custom-button span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 1rem;
 	color: #46cbb1;
@@ -60434,7 +60434,7 @@ body.is-dark .circle-chart__background {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 30px;
 }
 .personal-dashboard.personal-dashboard-v1 .dashboard-header .start {
@@ -60459,7 +60459,7 @@ body.is-dark .circle-chart__background {
 	margin-left: 10px;
 }
 .personal-dashboard.personal-dashboard-v1 .dashboard-body .dashboard-card {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .personal-dashboard.personal-dashboard-v1 .dashboard-body .dashboard-card > h4,
 .personal-dashboard.personal-dashboard-v1
@@ -60746,7 +60746,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 	min-width: 50%;
 }
 .personal-dashboard.personal-dashboard-v3 .dashboard-card {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .personal-dashboard.personal-dashboard-v3 .dashboard-card:not(:last-child) {
 	margin-bottom: 1.5rem;
@@ -60855,7 +60855,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 }
 .personal-dashboard.personal-dashboard-v3 .stats-wrapper .people .left span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .personal-dashboard.personal-dashboard-v3
 	.stats-wrapper
@@ -60997,7 +60997,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 	}
 } /*! _finance.scss | Huro | Css ninja 2020-2021 */
 .finance-dashboard.analytics-dashboard .dashboard-tile {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .finance-dashboard.analytics-dashboard .dashboard-tile .tile-head {
 	display: -webkit-box;
@@ -61047,7 +61047,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 	font-size: 0.9rem;
 }
 .finance-dashboard.analytics-dashboard .dashboard-card {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	height: 100%;
 }
 .finance-dashboard.analytics-dashboard .dashboard-card .card-head {
@@ -61078,7 +61078,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 	.revenue-stats
 	.revenue-stat {
 	margin-right: 30px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .finance-dashboard.analytics-dashboard
 	.dashboard-card
@@ -61183,7 +61183,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	height: calc(100% - 44px);
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .finance-dashboard.analytics-dashboard .dashboard-card .progress-block .value {
 	font-size: 1.4rem;
@@ -61343,7 +61343,7 @@ body.is-dark .personal-dashboard.personal-dashboard-v2 .home-header .cta {
 	color: #283252;
 }
 .finance-dashboard.stock-dashboard .stock .stock-info .stock-fullname {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .finance-dashboard.stock-dashboard .stock .stock-value {
@@ -61582,7 +61582,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 30px;
 }
 .finance-dashboard.sales-dashboard .dashboard-header .start {
@@ -61644,7 +61644,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.revenue-stats
 	.revenue-stat {
 	margin-right: 30px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .finance-dashboard.sales-dashboard
 	.dashboard-card
@@ -61693,7 +61693,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .finance-dashboard.sales-dashboard .dashboard-card .chart-media .meta h4 {
 	font-family: "Montserrat", sans-serif;
@@ -61736,7 +61736,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 .finance-dashboard.sales-dashboard .dashboard-card .chart-group .group span {
 	display: block;
 	margin-top: -25px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 	font-weight: 600;
 	font-size: 1.2rem;
@@ -61879,7 +61879,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.top
 	.card-number
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	font-weight: 500;
 	color: #fcfcfc;
@@ -61903,7 +61903,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.card-block-inner
 	.credit-card
 	.bottom {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.7rem;
 	font-weight: 500;
 	color: #fcfcfc;
@@ -61937,7 +61937,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.credit-card-meta
 	span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .banking-dashboard.banking-dashboard-v1
 	.dashboard-card.is-credit-cards
@@ -62029,7 +62029,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.info-block-inner
 	.info-block-line
 	h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #283252;
 	font-size: 0.9rem;
@@ -62124,7 +62124,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	padding: 0 4px;
 }
 .banking-dashboard.banking-dashboard-v1
@@ -62181,7 +62181,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.transactions
 	.media-flex-center
 	.flex-end {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1rem;
 	font-weight: 500;
 	color: #283252;
@@ -62213,7 +62213,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin-bottom: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .banking-dashboard.banking-dashboard-v1 .dashboard-card > .title-wrap h3 {
 	font-family: "Montserrat", sans-serif;
@@ -62484,7 +62484,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	width: 240px;
 	height: 144px;
 	border-radius: 14px;
@@ -62658,7 +62658,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.card-balance-stats
 	.card-balance-stat {
 	width: 50%;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .banking-dashboard.banking-dashboard-v2
 	.dashboard-card.is-card-panel
@@ -62772,7 +62772,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.stat-block
 	.stat-text {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 1.1rem;
 	color: #283252;
@@ -62793,7 +62793,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.monthly-summary
 	.monthly-summary-item {
 	padding: 20px 0;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .banking-dashboard.banking-dashboard-v2
 	.dashboard-card.is-card-panel
@@ -62887,7 +62887,7 @@ body.is-dark .finance-dashboard.stock-dashboard .stock-card .action-bar h3 {
 	.transactions
 	.media-flex-center
 	.flex-end {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1rem;
 	font-weight: 500;
 	color: #283252;
@@ -63054,7 +63054,7 @@ body.is-dark
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 20px;
 }
 .banking-dashboard.banking-dashboard-v3 .dashboard-header .left > span {
@@ -63110,7 +63110,7 @@ body.is-dark
 }
 .banking-dashboard.banking-dashboard-v3 .dashboard-tiles .dashboard-tile span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .banking-dashboard.banking-dashboard-v3
 	.dashboard-tiles
@@ -63331,7 +63331,7 @@ body.is-dark
 	border-color: #671cc9;
 	padding: 30px;
 	color: #fff;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
 		0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(103, 28, 201, 0.2);
 	box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
@@ -63383,7 +63383,7 @@ body.is-dark
 	.booking-bar-info
 	.inner
 	.booking-bar-sub-heading {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	font-size: 1.1rem;
 	color: #fff;
@@ -63422,7 +63422,7 @@ body.is-dark
 	.booking-bar
 	.booking-bar-inputs
 	.input {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .business-dashboard.flights-dashboard .flights-toolbar {
@@ -63438,7 +63438,7 @@ body.is-dark
 	justify-content: space-between;
 }
 .business-dashboard.flights-dashboard .flights-toolbar h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	color: #283252;
 }
@@ -63485,7 +63485,7 @@ body.is-dark
 	.flights-summary-wrapper
 	.flight-summary
 	.flight-price {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 2rem;
 	font-weight: 700;
 	color: #671cc9;
@@ -63530,7 +63530,7 @@ body.is-dark
 	.flight-summary
 	.meta
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.9rem;
 }
@@ -63573,7 +63573,7 @@ body.is-dark
 .business-dashboard.flights-dashboard .flights .flight-card .end span {
 	display: block;
 	color: #283252;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .business-dashboard.flights-dashboard
 	.flights
@@ -63609,7 +63609,7 @@ body.is-dark
 	.flight-card
 	.end
 	span:nth-child(3) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -63708,7 +63708,7 @@ body.is-dark
 	margin-left: 0.75rem;
 }
 .business-dashboard.flights-dashboard .flights .flight-card .flight-price {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.8rem;
 	font-weight: 600;
 	color: #a2a5b9;
@@ -63854,7 +63854,7 @@ body.is-dark
 	.item-inner
 	span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 1.6rem;
 	color: #283252;
@@ -63934,7 +63934,7 @@ body.is-dark
 	.company-stat
 	span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .business-dashboard.company-dashboard
 	.dashboard-card.is-company
@@ -63986,7 +63986,7 @@ body.is-dark
 	.revenue-stats
 	.revenue-stat {
 	margin-right: 30px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .business-dashboard.company-dashboard
 	.dashboard-card.is-base-chart
@@ -64094,7 +64094,7 @@ body.is-dark
 	border-radius: 16px;
 	padding: 50px;
 	background: #671cc9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
 		0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(103, 28, 201, 0.2);
 	box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
@@ -64192,7 +64192,7 @@ body.is-dark
 	margin-bottom: 4px;
 }
 .business-dashboard.hr-dashboard .block-header .block-text {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #fff;
 	margin-bottom: 16px;
@@ -64345,7 +64345,7 @@ body.is-dark
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin-bottom: 20px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .business-dashboard.course-dashboard .dashboard-title.is-main {
 	margin-bottom: 30px;
@@ -64404,7 +64404,7 @@ body.is-dark
 	left: -2px;
 }
 .business-dashboard.course-dashboard .course-grid .course-card .students .link {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #671cc9;
 	margin-left: 1rem;
@@ -64421,7 +64421,7 @@ body.is-dark
 	.course-card
 	.attached-block
 	> a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #671cc9;
 	margin-bottom: 0.5rem;
@@ -64450,7 +64450,7 @@ body.is-dark
 	.attached-block
 	.block-stats
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -64767,7 +64767,7 @@ body.is-dark
 	.dashboard-header-wrapper
 	.dashboard-header
 	.header-meta {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-left: 16px;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v1
@@ -64966,7 +64966,7 @@ body.is-dark
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 20px;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v1 .body-title h3 {
@@ -64987,7 +64987,7 @@ body.is-dark
 	font-size: 1.1rem;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v1 .overview-card {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .lifestyle-dashboard.lifestyle-dashboard-v1 .overview-card.is-metrics,
 .lifestyle-dashboard.lifestyle-dashboard-v1 .overview-card.is-heatmap {
@@ -65111,7 +65111,7 @@ body.is-dark
 	.cloud-container
 	.cloud-element {
 	font-size: 2em;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-align: center;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v1
@@ -65403,7 +65403,7 @@ body.is-dark
 	padding: 16px;
 	text-align: center;
 	width: 100%;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v1 .post-stats span {
@@ -65597,7 +65597,7 @@ body.is-dark
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin-bottom: 20px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .lifestyle-dashboard.lifestyle-dashboard-v2 .dashboard-title.is-main {
 	margin-bottom: 30px;
@@ -65671,7 +65671,7 @@ body.is-dark
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	padding: 20px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	opacity: 0;
 	pointer-events: none;
 	z-index: 2;
@@ -65787,7 +65787,7 @@ body.is-dark
 	padding: 10px;
 	border-radius: 16px;
 	background: #300d5e;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 30px;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v3 .illustration-header .header-image {
@@ -65846,7 +65846,7 @@ body.is-dark
 	.summary-stats
 	.summary-stat
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: block;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v3
@@ -65885,7 +65885,7 @@ body.is-dark
 	font-size: 12px;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v3 .health-tile {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .lifestyle-dashboard.lifestyle-dashboard-v3 .health-tile .tile-head {
 	display: -webkit-box;
@@ -65967,7 +65967,7 @@ body.is-dark
 	padding: 10px;
 	border-radius: 16px;
 	background: #671cc9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	-webkit-box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
 		0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(103, 28, 201, 0.2);
 	box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
@@ -66062,7 +66062,7 @@ body.is-dark
 	.writing-stats
 	.writing-stat
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 700;
 	font-size: 1.8rem;
 	color: #283252;
@@ -66183,7 +66183,7 @@ body.is-dark
 	display: block;
 	min-width: 60px;
 	text-align: right;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 0.8rem;
 	color: #283252;
@@ -66383,7 +66383,7 @@ body.is-dark
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin-bottom: 20px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .lifestyle-dashboard.lifestyle-dashboard-v5 .dashboard-title.is-main {
 	margin-bottom: 30px;
@@ -66398,7 +66398,7 @@ body.is-dark
 	color: #283252;
 }
 .lifestyle-dashboard.lifestyle-dashboard-v5 .dashboard-title .members h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	padding: 0 0.35rem;
 	margin-bottom: 0.75rem;
@@ -66455,7 +66455,7 @@ body.is-dark
 	.media-feed
 	.feed-group
 	.group-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 	font-weight: 500;
 	color: #a2a5b9;
@@ -66601,7 +66601,7 @@ body.is-dark
 		0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(103, 28, 201, 0.2);
 	box-shadow: 0 14px 26px -12px rgba(103, 28, 201, 0.42),
 		0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(103, 28, 201, 0.2);
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #fff;
 	height: 2.75em;
@@ -67388,7 +67388,7 @@ body.is-dark
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 30px;
 }
 .ecommerce-dashboard.ecommerce-dashboard-v1 .dashboard-header .start {
@@ -67413,7 +67413,7 @@ body.is-dark
 	margin-left: 10px;
 }
 .ecommerce-dashboard.ecommerce-dashboard-v1 .dashboard-tile {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .ecommerce-dashboard.ecommerce-dashboard-v1 .dashboard-tile .tile-head {
 	display: -webkit-box;
@@ -67475,7 +67475,7 @@ body.is-dark
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin: 20px 0;
 }
 .ecommerce-dashboard.ecommerce-dashboard-v1 .table-header h3 {
@@ -67544,7 +67544,7 @@ body.is-dark
 	padding: 10px;
 	border-radius: 16px;
 	background: #e9e9fd;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .food-delivery-dashboard .left .left-header .header-image {
 	position: relative;
@@ -67590,7 +67590,7 @@ body.is-dark
 	-ms-flex-align: center;
 	align-items: center;
 	margin: 20px 0;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .food-delivery-dashboard
 	.left
@@ -67715,7 +67715,7 @@ body.is-dark
 	.food-pills-inner
 	.food-pill
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	padding-top: 12px;
 	-webkit-transition: color 0.3s;
@@ -67862,7 +67862,7 @@ body.is-dark
 	border-radius: 12px;
 	background: #671cc9;
 	border: 1px solid #671cc9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-align: center;
 }
 .food-delivery-dashboard
@@ -67960,7 +67960,7 @@ body.is-dark
 	.meta-container
 	.meta-content {
 	margin-left: 8px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	line-height: 1.3;
 }
 .food-delivery-dashboard
@@ -68124,7 +68124,7 @@ body.is-dark
 	.cart-button
 	.total
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin: 0;
 }
 .food-delivery-dashboard
@@ -68486,7 +68486,7 @@ body.is-dark
 	.content-section
 	.content-section-body
 	.content-section-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	color: #a2a5b9;
 	text-transform: uppercase;
@@ -68583,7 +68583,7 @@ body.is-dark
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #283252;
 }
@@ -68696,10 +68696,10 @@ body.is-dark
 	box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
 .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--suggestion-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--suggestion-address {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--icon-search {
 	top: 13px;
@@ -68987,7 +68987,7 @@ body.is-dark .card-hub .hub-body .body-inner .hub-card .hub-card-foot a {
 	margin-right: 10px;
 }
 .list-view-toolbar .list-info span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .list-view-toolbar .buttons {
@@ -69110,7 +69110,7 @@ body.is-dark .card-hub .hub-body .body-inner .hub-card .hub-card-foot a {
 	.stats
 	.stat
 	> span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .list-view.list-view-v1
 	.list-view-item
@@ -69187,7 +69187,7 @@ body.is-dark .card-hub .hub-body .body-inner .hub-card .hub-card-foot a {
 	.meta-right
 	.network
 	> span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 	margin-left: 6px;
@@ -69315,7 +69315,7 @@ body.is-dark
 	-ms-flex-align: center;
 	align-items: center;
 	margin-top: 10px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #671cc9;
 }
@@ -69691,7 +69691,7 @@ body.is-dark
 	.meta-right
 	.network
 	> span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 	margin-left: 6px;
@@ -70611,7 +70611,7 @@ body.is-dark
 	margin-right: 10px;
 }
 .list-flex-toolbar .list-info span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .list-flex-toolbar .buttons {
@@ -70674,7 +70674,7 @@ body.is-dark
 	margin-right: 10px;
 }
 .user-grid-toolbar .list-info span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .user-grid-toolbar .buttons {
@@ -71076,7 +71076,7 @@ body.is-dark .user-grid.user-grid-v2 .grid-item-wrap .grid-item-head {
 	.chart-block
 	.stats
 	span:first-child {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.8rem;
 	color: #283252;
 	font-weight: 700;
@@ -71257,7 +71257,7 @@ body.is-dark
 	margin-right: 10px;
 }
 .card-grid-toolbar .list-info span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .card-grid-toolbar .buttons {
@@ -71344,7 +71344,7 @@ body.is-dark
 	.left
 	.meta
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 	color: #a2a5b9;
 }
@@ -71659,7 +71659,7 @@ body.is-dark
 	margin-right: 4px;
 }
 .card-grid.card-grid-v2 .card-grid-item .card .card-footer a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	padding: 1rem 0.75rem;
 	-webkit-transition: all 0.3s;
@@ -71834,7 +71834,7 @@ body.is-dark
 	.card-grid-item-footer
 	.meta
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 	color: #a2a5b9;
 }
@@ -71904,7 +71904,7 @@ body.is-dark
 	margin-right: 10px;
 }
 .tile-grid-toolbar .list-info span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .tile-grid-toolbar .buttons {
@@ -71952,7 +71952,7 @@ body.is-dark
 }
 .tile-grid.tile-grid-v1 .tile-grid-item .tile-grid-item-inner .meta span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .tile-grid.tile-grid-v1
 	.tile-grid-item
@@ -72006,7 +72006,7 @@ body.is-dark
 }
 .tile-grid.tile-grid-v2 .tile-grid-item .tile-grid-item-inner .meta span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .tile-grid.tile-grid-v2
 	.tile-grid-item
@@ -72110,7 +72110,7 @@ body.is-dark .tile-grid.tile-grid-v2 .tile-grid-item:hover {
 	.meta
 	.tile-title
 	h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-family: "Montserrat", sans-serif;
 	font-size: 1rem;
 	font-weight: 600;
@@ -72191,7 +72191,7 @@ body.is-dark .tile-grid.tile-grid-v2 .tile-grid-item:hover {
 	.meta-inner
 	span:nth-child(2) {
 	font-size: 0.8rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .tile-grid.tile-grid-v3 .tile-grid-item.is-large .tile-grid-item-inner {
@@ -72241,7 +72241,7 @@ body.is-dark .tile-grid.tile-grid-v2 .tile-grid-item:hover {
 	.meta
 	.tile-title
 	h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.2rem;
 	font-weight: 500;
 	color: #283252;
@@ -72364,7 +72364,7 @@ body.is-dark .tile-grid.tile-grid-v2 .tile-grid-item:hover {
 	.meta
 	.tile-title
 	h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.3rem;
 	font-weight: 500;
 	color: #283252;
@@ -72502,7 +72502,7 @@ body.is-dark .tile-grid.tile-grid-v2 .tile-grid-item:hover {
 	.meta
 	.tile-title
 	h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.2rem;
 	font-weight: 500;
 	color: #283252;
@@ -73369,7 +73369,7 @@ body.is-dark .hljs-string {
 }
 .is-kanban-wrapper .kanban-column .column-title h3 {
 	margin-bottom: 0;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -73908,7 +73908,7 @@ body.is-dark .all-projects .project-grid .project-grid-item h3 {
 }
 .all-projects .all-projects-header .header-item .item-inner span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 1.4rem;
 	color: #283252;
@@ -73952,7 +73952,7 @@ body.is-dark .all-projects .project-grid .project-grid-item h3 {
 	font-weight: 600;
 }
 .all-projects .projects-card-grid .grid-item .top-section .body p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .all-projects .projects-card-grid .grid-item .bottom-section {
@@ -74081,7 +74081,7 @@ body.is-dark
 .all-projects .illustration-header .header-stats .stats-inner .stat-item span {
 	position: relative;
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 2rem;
 	color: #283252;
@@ -74255,7 +74255,7 @@ body.is-dark
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .all-projects .project-minimal-grid .grid-body .grid-item .item-head .type {
 	text-transform: uppercase;
@@ -74341,7 +74341,7 @@ body.is-dark
 	.item-description
 	.item-people
 	.label {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-weight: 400;
 }
@@ -74857,7 +74857,7 @@ body.is-dark
 	margin-bottom: 4px;
 }
 .project-details .project-details-inner .task-grid .task-card .title-wrap span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -74916,7 +74916,7 @@ body.is-dark
 	span {
 	margin-left: 2px;
 	font-size: 0.9rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 body.is-dark
@@ -76725,7 +76725,7 @@ body.is-dark
 	background-color: transparent;
 	border: none;
 	color: #273346;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	font-size: 15px;
 	padding-left: 80px;
@@ -76836,7 +76836,7 @@ body.is-dark
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	padding: 8px 12px;
 	color: #a2a5b9;
@@ -76972,7 +76972,7 @@ body.is-dark
 	.conversation
 	.conversation-detail {
 	overflow: hidden;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .chat-app-wrapper
 	.wrapper
@@ -77234,7 +77234,7 @@ body.is-dark
 	left: calc(100% + 12px);
 	bottom: 0;
 	font-size: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #c0c7d2;
 	white-space: nowrap;
@@ -77269,7 +77269,7 @@ body.is-dark
 	padding: 15px;
 	border-radius: 20px 20px 20px 0;
 	line-height: 1.5;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 	font-weight: 500;
 }
@@ -77760,7 +77760,7 @@ body.is-dark
 	color: #283252;
 }
 .chat-app-wrapper .wrapper .detail-area .chat-side-content .user-job-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .chat-app-wrapper .wrapper .detail-area .chat-side-content .side-actions {
@@ -78254,7 +78254,7 @@ body.is-dark
 }
 .modern-login .is-form .login-wrapper .button-wrap.has-help > span {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .modern-login .is-form .login-wrapper .button-wrap.has-help > span a {
 	color: #671cc9;
@@ -78600,7 +78600,7 @@ body.is-dark .remember-toggle .toggler > span {
 	color: #283252;
 }
 .signup-wrapper .signup-subtitle {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #999;
 	font-size: 1rem;
 }
@@ -78828,7 +78828,7 @@ body.is-dark .remember-toggle .toggler > span {
 }
 .signup-wrapper .hero .button-wrap.has-help > span {
 	margin-left: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .signup-wrapper .hero .button-wrap.has-help > span a {
 	color: #671cc9;
@@ -78959,7 +78959,7 @@ body.is-dark .remember-toggle .toggler > span {
 	font-size: 1.4rem;
 }
 .signup-profile-wrapper .subtitle {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1rem;
 }
 .signup-profile-wrapper .picture-selector,
@@ -79324,7 +79324,7 @@ body.is-dark .avatar-carousel .slick-custom::after {
 }
 .auth-wrapper-inner .hero .hero-body .auth-content h2 {
 	font-size: 2rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	line-height: 1;
 }
 .auth-wrapper-inner .hero .hero-body .auth-content p {
@@ -79366,7 +79366,7 @@ body.is-dark .avatar-carousel .slick-custom::after {
 	padding: 10px 0;
 }
 .auth-wrapper-inner .setting-item .setting-meta {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	margin-left: 8px;
 }
@@ -79472,7 +79472,7 @@ body.is-dark .auth-wrapper-inner .forgot-link a:hover {
 }
 .auth-wrapper-inner .single-form-wrap .inner-wrap .auth-head h2 {
 	font-size: 2rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	line-height: 1;
 }
 .auth-wrapper-inner .single-form-wrap .inner-wrap .auth-head p {
@@ -79613,7 +79613,7 @@ body.is-dark
 	-ms-flex-align: center;
 	align-items: center;
 	color: #a2a5b9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .profile-wrapper .profile-header .profile-stats .profile-stat span {
 	font-size: 0.9rem;
@@ -79827,7 +79827,7 @@ body.is-dark
 	.experience-item
 	.meta
 	> span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: block;
 }
 .profile-wrapper
@@ -80006,7 +80006,7 @@ body.is-dark
 	.meta
 	> span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .profile-wrapper
 	.profile-body
@@ -80169,7 +80169,7 @@ body.is-dark
 	.icon-wrap
 	.count
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	font-size: 0.75rem;
 }
@@ -80181,7 +80181,7 @@ body.is-dark
 	.skills-wrapper
 	.skills-item
 	.skill-info {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-left: 12px;
 	line-height: 1.3;
 }
@@ -80467,7 +80467,7 @@ body.is-dark
 	.meta
 	> span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .profile-wrapper
 	.profile-body
@@ -80559,7 +80559,7 @@ body.is-dark
 	.meta
 	> span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .profile-wrapper
 	.profile-body
@@ -80615,7 +80615,7 @@ body.is-dark
 	.more-button
 	.button {
 	min-width: 180px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	font-weight: 500;
@@ -81079,7 +81079,7 @@ body.is-dark
 	.setting-item
 	.meta
 	> span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: block;
 }
 .account-wrapper
@@ -81389,7 +81389,7 @@ body.is-dark
 	letter-spacing: 1px;
 }
 .profile-wrapper .profile-body .settings-section .settings-box h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	font-weight: 400;
 	color: #a2a5b9;
@@ -81602,7 +81602,7 @@ body.is-dark
 }
 .standard-onboarding .title-wrap p {
 	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 }
 .standard-onboarding .onboarding-wrap {
@@ -81646,7 +81646,7 @@ body.is-dark
 	.onboarding-wrap-inner
 	.onboarding-card
 	p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 }
 .standard-onboarding
@@ -81690,7 +81690,7 @@ body.is-dark
 }
 .onboarding-wrapper .title-wrap p {
 	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.85rem;
 }
 .onboarding-wrapper.onboarding-v1 .onboarding-wrap {
@@ -81747,7 +81747,7 @@ body.is-dark
 	.onboarding-card
 	.onboarding-content
 	p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 }
 .onboarding-wrapper.onboarding-v1
@@ -81850,7 +81850,7 @@ body.is-dark
 	.onboarding-card
 	.onboarding-content
 	p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 }
 .onboarding-wrapper.onboarding-v2
@@ -81928,7 +81928,7 @@ body.is-dark
 	margin-right: 10px;
 }
 .search-results-wrapper .search-results-header .search-info span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .search-results-wrapper .search-results-header .tabs-inner {
@@ -82226,7 +82226,7 @@ body.is-dark
 }
 .saas-billing-wrapper .plans-wrapper .left .plans .plan .plan-inner .meta span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .saas-billing-wrapper
 	.plans-wrapper
@@ -82289,7 +82289,7 @@ body.is-dark
 	margin-left: auto;
 }
 .saas-billing-wrapper .plans-wrapper .right .plan-details > h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.1rem;
 	font-weight: 500;
 	color: #283252;
@@ -82351,7 +82351,7 @@ body.is-dark
 	.right
 	.plan-pricing {
 	padding: 5px 0 10px 0;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	line-height: 1.3;
 }
 .saas-billing-wrapper
@@ -82391,7 +82391,7 @@ body.is-dark
 	span
 	b {
 	font-size: 2rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .saas-billing-wrapper
 	.plans-wrapper
@@ -82463,7 +82463,7 @@ body.is-dark
 	.option-block
 	.block-header
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .saas-billing-wrapper
@@ -82472,7 +82472,7 @@ body.is-dark
 	.option-block
 	.block-header
 	a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .saas-billing-wrapper
@@ -82591,7 +82591,7 @@ body.is-dark
 	.payment-form
 	.form-header
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	cursor: pointer;
 }
@@ -83498,7 +83498,7 @@ body.is-dark
 .action-page-wrapper.action-page-v1 .wrapper-inner .action-box .box-content,
 .action-page-wrapper.action-page-v2 .wrapper-inner .action-box .box-content {
 	text-align: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .action-page-wrapper.action-page-v1
 	.wrapper-inner
@@ -83698,7 +83698,7 @@ body.is-dark
 	.side-wrapper
 	.side-inner
 	.side-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 16px;
 }
 .action-page-wrapper.action-page-v2
@@ -83890,7 +83890,7 @@ body.is-dark
 	top: 17px;
 	right: -10px;
 	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #283252;
 	background: #fff;
@@ -83964,7 +83964,7 @@ body.is-dark
 	background: #fff;
 	border: 1px solid #e5e5e5;
 	border-radius: 8px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 0.9rem;
 	-webkit-transition: all 0.3s;
@@ -84118,7 +84118,7 @@ body.is-dark
 	border: 1px solid #e5e5e5;
 	text-align: center;
 	border-radius: 4px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	font-size: 0.9rem;
 	-webkit-transition: all 0.3s;
@@ -84134,7 +84134,7 @@ body.is-dark
 	.radio-box
 	.radio-box-inner
 	.fee {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 700;
 	color: #283252;
 	font-size: 2.4rem;
@@ -84437,7 +84437,7 @@ body.is-dark
 .form-layout.is-stacked .form-outer .form-body .form-section .add-link {
 	display: inline-block;
 	padding: 4px 0;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	font-size: 0.9rem;
 	color: #671cc9;
@@ -84882,7 +84882,7 @@ body.is-dark
 	height: 100%;
 }
 .stepper-form .form-sections .form-section .flex-label h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color: #283252;
 }
@@ -84914,7 +84914,7 @@ body.is-dark
 	justify-content: flex-end;
 }
 .stepper-form .form-sections .form-section .switch-segment > span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 }
 .stepper-form .form-sections .form-section .switch-segment > span:first-child {
@@ -84966,7 +84966,7 @@ body.is-dark
 	width: 16px;
 }
 .stepper-form .form-sections .form-section .input-button span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-left: 0.75rem;
 }
 .stepper-form .form-sections .form-section .options {
@@ -85159,7 +85159,7 @@ body.is-dark
 }
 .stepper-form .form-sections .form-section .form-section-output .output > span {
 	font-weight: 500;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 }
 .stepper-form
@@ -85281,7 +85281,7 @@ body.is-dark
 	margin-bottom: 0.15rem;
 }
 .stepper-form .form-stepper .form-help .list-wrap li span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-weight: 300;
 }
@@ -85293,7 +85293,7 @@ body.is-dark
 	stroke: #671cc9;
 }
 .stepper-form .form-stepper .step-number {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	font-size: 0.75rem !important;
 }
@@ -85618,7 +85618,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 .confirm-account-wrapper .wrapper-inner .action-box .box-content,
 .promotion-page-wrapper .wrapper-inner .action-box .box-content {
 	text-align: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .confirm-account-wrapper .wrapper-inner .action-box .box-content img,
 .promotion-page-wrapper .wrapper-inner .action-box .box-content img {
@@ -85694,7 +85694,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 }
 .promotion-page-wrapper .wrapper-outer .wrapper-inner .action-box .price span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .promotion-page-wrapper
 	.wrapper-outer
@@ -85736,7 +85736,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 	min-width: 40%;
 }
 .promotion-page-wrapper .wrapper-outer .side-wrapper .side-inner .side-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 16px;
 }
 .promotion-page-wrapper
@@ -85867,7 +85867,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 1px solid #e5e5e5;
 	padding: 16px 40px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .status-page-wrapper .status-block .status-uptime .title {
 	display: inline-block;
@@ -85948,7 +85948,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 }
 .status-page-wrapper .status-block .status-list p {
 	font-size: 0.9rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .status-page-wrapper .status-block .status-list .amount {
 	position: relative;
@@ -85973,7 +85973,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 	box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06);
 }
 .status-page-wrapper .status-block .status-list .amount span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 	font-weight: 600;
 	font-size: 0.85rem;
@@ -86028,7 +86028,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 	color: #a2a5b9;
 }
 .status-page-wrapper .status-tweets .updates .update .update-content .tweet {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 }
 .status-page-wrapper .status-footer {
@@ -86038,7 +86038,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 	padding: 20px;
 }
 .status-page-wrapper .status-footer a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #8b8ea7;
 	padding: 0 10px;
 	-webkit-transition: color 0.3s;
@@ -86050,7 +86050,7 @@ body.is-dark .stepper-form .form-stepper .steps .steps-segment::after {
 }
 .status-page-wrapper .status-footer .copyright {
 	margin-left: auto;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 body.is-dark .status-page-wrapper .status-block {
@@ -86178,7 +86178,7 @@ body.is-dark .status-page-wrapper .status-footer a:hover {
 }
 .invoice-wrapper .invoice-body .invoice-card .invoice-section.is-flex .meta {
 	margin-left: 16px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .invoice-wrapper .invoice-body .invoice-card .invoice-section.is-flex .meta h3 {
 	font-family: "Montserrat", sans-serif;
@@ -86268,7 +86268,7 @@ body.is-dark .status-page-wrapper .status-footer a:hover {
 	.flex-table.sub-table
 	.flex-table-item
 	.table-label {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	color: #a2a5b9;
@@ -86280,7 +86280,7 @@ body.is-dark .status-page-wrapper .status-footer a:hover {
 	.flex-table.sub-table
 	.flex-table-item
 	.table-total {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 	font-weight: 500;
 }
@@ -86351,7 +86351,7 @@ body.is-dark .invoice-wrapper .invoice-section.is-flex .end h3 {
 	margin: 0 auto;
 }
 .error-container .error-wrapper .error-inner .bg-number {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	position: absolute;
 	top: -58px;
 	left: -50px;
@@ -86382,7 +86382,7 @@ body.is-dark .invoice-wrapper .invoice-section.is-flex .end h3 {
 	margin-top: 10px;
 }
 .error-container .error-wrapper .error-inner p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.1rem;
 	margin-bottom: 16px;
 }
@@ -86572,7 +86572,7 @@ body.is-dark .error-container .error-wrapper .error-inner .bg-number {
 	justify-content: flex-end;
 }
 .widget-toolbar .right .tag {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .widget-toolbar .right .right-icon {
 	position: relative;
@@ -86738,7 +86738,7 @@ body.is-dark
 }
 .text-widget .widget-content .hashtags {
 	padding-top: 8px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .text-widget .widget-content .hashtags a {
 	color: #671cc9;
@@ -86772,7 +86772,7 @@ body.is-dark .text-widget .hashtags a {
 }
 .calendar-widget .calendar-widget-inner .calendar-square .date span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .calendar-widget
 	.calendar-widget-inner
@@ -86845,7 +86845,7 @@ body.is-dark .image-widget .progress-wrap .progress {
 	margin-bottom: 12px;
 }
 .list-widget ul li a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -86863,7 +86863,7 @@ body.is-dark .list-widget ul li a:hover {
 .picker-widget .calendar {
 	color: #283252;
 	font-size: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	width: 100%;
 	margin-bottom: 5px;
 }
@@ -86916,7 +86916,7 @@ body.is-dark .picker-widget .current-day {
 }
 .stats-widget .stat-number span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .stats-widget .stat-number span:first-child {
 	font-size: 2rem;
@@ -86989,7 +86989,7 @@ body.is-dark .stats-widget .stat-number span:first-child {
 	padding-top: 12px;
 }
 .search-widget .field .topics a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.95rem;
 }
@@ -87057,7 +87057,7 @@ body.is-dark .search-widget .field .topics a:hover {
 	margin-left: 12px;
 }
 .icon-list-widget .icon-list .icon-list-item .item-meta span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 body.is-dark .icon-list-widget .icon-list .icon-list-item:hover .icon-wrap {
@@ -87104,7 +87104,7 @@ body.is-dark .icon-list-widget .icon-list .icon-list-item .icon-wrap {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .video-widget .widget-content .widget-meta > svg {
 	height: 20px;
@@ -87146,7 +87146,7 @@ body.is-dark .video-widget .widget-meta h4 {
 	color: #aaaab3;
 }
 .inbox-widget .sender-block h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 500;
 	color-interpolation-filters: #283252;
 	font-size: 0.95rem;
@@ -87173,7 +87173,7 @@ body.is-dark .video-widget .widget-meta h4 {
 	padding: 10px;
 	border-radius: 10px;
 	border: 1px solid #e5e5e5;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .inbox-widget .sender-block .exerpt h5 {
 	display: -webkit-box;
@@ -87216,7 +87216,7 @@ body.is-dark .inbox-widget .exerpt p {
 .illustration-widget.illustration-widget-v1 {
 	padding: 40px 30px;
 	text-align: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .illustration-widget.illustration-widget-v1 .img-container {
 	position: relative;
@@ -87310,7 +87310,7 @@ body.is-dark .illustration-widget.illustration-widget-v3 h3 {
 	background: #d3fef3;
 }
 .creative-list-widget .creative-list .creative-list-item .meta {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 	color: #283252;
 	font-weight: 500;
@@ -87478,7 +87478,7 @@ body.is-dark
 .call-widget {
 	padding: 40px 30px;
 	text-align: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .call-widget .img-container {
 	position: relative;
@@ -87678,7 +87678,7 @@ body.is-dark .avatar-list-widget .avatar-list .avatar-list-item .meta {
 }
 .contact-widget .widget-content .right {
 	width: 60%;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .contact-widget .widget-content .right > h3 {
 	font-family: "Montserrat", sans-serif;
@@ -87762,7 +87762,7 @@ body.is-dark .contact-widget .widget-content .right .contact-info span span {
 	color: #a2a5b9;
 }
 .followers-widget .channels .channel .channel-stats span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: block;
 }
 .followers-widget .channels .channel .channel-stats span:first-child {
@@ -87791,7 +87791,7 @@ body.is-dark .followers-widget .channels .channel .channel-icon {
 }
 .cart-widget .cart-items .cart-item .meta span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .cart-widget .cart-items .cart-item .meta span:first-child {
 	font-size: 0.9rem;
@@ -87827,7 +87827,7 @@ body.is-dark .cart-widget .cart-items .cart-item .meta span:nth-child(2) {
 	min-width: 140px;
 	height: 32px;
 	background: #eef0f7;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	border-radius: 8px;
 }
 .list-widget.tabbed-widget .widget-head .tabbed-controls .tabbed-control {
@@ -87942,7 +87942,7 @@ body.is-dark
 	content: attr(data-content);
 	position: absolute;
 	left: -45px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 	font-weight: 500;
 }
@@ -88189,7 +88189,7 @@ body.is-dark
 } /*! _widgets-stats.scss | Huro | Css ninja 2020-2021 */
 .stat-widget {
 	padding: 30px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .stat-widget .widget-head {
 	display: -webkit-box;
@@ -88233,7 +88233,7 @@ body.is-dark
 .stat-widget.area-stats-widget .area-stats .line-stat,
 .stat-widget.area-stats-widget .area-stats .area-stat {
 	margin-right: 30px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .stat-widget.line-stats-widget .line-stats .line-stat span,
 .stat-widget.line-stats-widget .line-stats .area-stat span,
@@ -88297,7 +88297,7 @@ body.is-dark
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .stat-widget.flex-stat-widget .chart-media .meta h4 {
 	font-family: "Montserrat", sans-serif;
@@ -88336,7 +88336,7 @@ body.is-dark
 .stat-widget.grouped-stat-widget .chart-group .group span {
 	display: block;
 	margin-top: -25px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #283252;
 	font-weight: 600;
 	font-size: 1.2rem;
@@ -88531,7 +88531,7 @@ body.is-dark .stat-widget.followers-stat-widget-v1 .go-icon {
 	border-left: 1px solid #bfbfbf;
 	padding-bottom: 6px;
 	padding-top: 6px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .wizard-navigation .navbar-item.is-wizard-title .title-wrap {
 	position: relative;
@@ -88577,7 +88577,7 @@ body.is-dark .stat-widget.followers-stat-widget-v1 .go-icon {
 	.dropdown-menu
 	.dropdown-content
 	.dropdown-item {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .wizard-navigation .is-dark-mode {
 	margin-left: auto;
@@ -88662,7 +88662,7 @@ body.is-dark .stat-widget.followers-stat-widget-v1 .go-icon {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	padding: 8px 12px;
 	color: #a2a5b9;
@@ -88800,7 +88800,7 @@ body.is-dark .wizard-buttons .button.is-light:hover {
 	text-align: center;
 }
 .wizard-v1-wrapper .inner-wrapper .step-title p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.2rem;
 }
 .wizard-v1-wrapper .step-content .wizard-types {
@@ -88846,7 +88846,7 @@ body.is-dark .wizard-buttons .button.is-light:hover {
 }
 .wizard-v1-wrapper .step-content .wizard-types .wizard-card p {
 	font-size: 1.1rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	text-align: center;
 	max-width: 240px;
@@ -88872,7 +88872,7 @@ body.is-dark .wizard-buttons .button.is-light:hover {
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	font-weight: 500;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	opacity: 0;
 	pointer-events: none;
@@ -88967,7 +88967,7 @@ body.is-dark .wizard-v1-wrapper .step-content .wizard-types .wizard-card:hover {
 	.field
 	.control
 	.input {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	text-align: center;
 	font-size: 1.2rem;
 	height: 50px;
@@ -89005,7 +89005,7 @@ body.is-dark
 	margin: 20px auto;
 }
 .wizard-v1-wrapper .step-content .project-dates > h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	text-align: center;
@@ -89100,7 +89100,7 @@ body.is-dark
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	padding-left: 4px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .wizard-v1-wrapper .step-content .project-budget {
 	background: #fff;
@@ -89111,7 +89111,7 @@ body.is-dark
 	margin: 20px auto;
 }
 .wizard-v1-wrapper .step-content .project-budget > h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	text-align: center;
@@ -89161,7 +89161,7 @@ body.is-dark
 	min-width: 50px;
 	border: 1px solid #e5e5e5;
 	border-radius: 12px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #c5c7d3;
 	margin: 0 8px;
@@ -89199,7 +89199,7 @@ body.is-dark
 	margin: 20px auto;
 }
 .wizard-v1-wrapper .step-content .project-customer > h4 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	text-align: center;
@@ -89534,7 +89534,7 @@ body.is-dark
 	.upload-box
 	.uploader-label
 	h3 {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .wizard-v1-wrapper
@@ -89676,7 +89676,7 @@ body.is-dark
 	.preview-box
 	.list-item-meta
 	p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .wizard-v1-wrapper
 	.step-content
@@ -89973,7 +89973,7 @@ body.is-dark
 	.members-list
 	.empty-wrap
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .wizard-v1-wrapper
@@ -90028,7 +90028,7 @@ body.is-dark
 	.meta
 	> span {
 	display: block;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	color: #a2a5b9;
@@ -90042,7 +90042,7 @@ body.is-dark
 	.invited-member
 	.meta
 	> p {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 0;
 	font-weight: 500;
 	color: #283252;
@@ -90566,7 +90566,7 @@ body.is-dark
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .wizard-v1-wrapper
@@ -90630,7 +90630,7 @@ body.is-dark
 	h4 {
 	text-transform: uppercase;
 	font-size: 0.8rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	color: #283252;
 	margin-bottom: 12px;
@@ -90744,7 +90744,7 @@ body.is-dark
 	.inner-block
 	.attachments {
 	color: #671cc9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 2rem;
 	font-weight: 600;
 	line-height: 1.4;
@@ -90774,7 +90774,7 @@ body.is-dark
 	.inner-block
 	.date {
 	color: #671cc9;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.3rem;
 	font-weight: 500;
 	line-height: 1.4;
@@ -91203,7 +91203,7 @@ body.is-dark
 	border-color: #671cc9;
 	color: #fcfcfc;
 	font-weight: 500;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .inbox-wrapper
 	.wrapper-inner
@@ -91234,7 +91234,7 @@ body.is-dark
 	ul
 	li
 	a {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -91612,7 +91612,7 @@ body.is-dark
 	.contact-block
 	.contact-meta
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #999;
 }
 .inbox-wrapper .wrapper-inner .inbox-messages {
@@ -91790,7 +91790,7 @@ body.is-dark
 	.inbox-message
 	.message-meta
 	span.email {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -91801,7 +91801,7 @@ body.is-dark
 	.inbox-message
 	.message-meta
 	span.subject {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.95rem;
 	white-space: nowrap;
 	overflow: hidden;
@@ -91910,7 +91910,7 @@ body.is-dark
 	.header-area
 	.message-meta
 	.sender-email {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 	font-size: 0.95rem;
 }
@@ -91952,7 +91952,7 @@ body.is-dark
 	.header-area
 	.attachments
 	span {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 600;
 	display: block;
 	margin-left: 4px;
@@ -92026,7 +92026,7 @@ body.is-dark
 	.message-head
 	.info
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 0.9rem;
 	color: #a2a5b9;
 }
@@ -92052,7 +92052,7 @@ body.is-dark
 	.message-inner
 	.mail-content {
 	padding: 40px 60px 30px 60px;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 }
 .inbox-wrapper
 	.wrapper-inner
@@ -92331,7 +92331,7 @@ body.is-dark
 	.reply-as
 	.reply-details
 	span:nth-child(2) {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	color: #a2a5b9;
 }
 .inbox-wrapper
@@ -92851,7 +92851,7 @@ body.is-dark .inbox-action:hover svg {
 	-ms-flex-align: center;
 	align-items: center;
 	font-size: 1rem;
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	margin-bottom: 4px;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -92906,7 +92906,7 @@ body.is-dark .inbox-dropdown div > .button {
 	padding: 0 20px;
 }
 .compose-panel .header-area .panel-title {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-size: 1.4rem;
 	color: #283252;
 }
@@ -93612,7 +93612,7 @@ body.is-dark .inbox-dropdown div > .button {
 	stroke: #797bf2 !important;
 }
 .pricing-wrapper {
-	font-family: "Roboto", sans-serif;
+	/* font-family: "Roboto", sans-serif; */
 	font-weight: 400;
 	color: #9f9f9f;
 	font-size: 15px;

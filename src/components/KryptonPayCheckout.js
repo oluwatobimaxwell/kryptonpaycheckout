@@ -10,6 +10,7 @@ import parsePhoneNumber, { formatNumber } from 'libphonenumber-js';
 import { toMoney } from "../utils/Functions";
 import { connect } from "react-redux";
 import { updateData, updatePrices } from "../Redux/Data/actions";
+import { useParams } from "react-router-dom";
 
 const api = new Api();
 // const ws = new Socket()
@@ -21,31 +22,29 @@ export const formatPhoneNumberInt = (d) => {
 
 const KryptonPayCheckout = (props) => {
 
-	const business = props?.data?.initialize?.merchant || {};
+
+	const business = props?.data?.initialize?.merchant || props?.data?.business || {};
 	const others = props?.data?.initialize?.others || {};
 	const data = props?.data?.data || {};
-	const info = props?.data?.info
+	const info = props?.data?.info;
+	const nonIntegrated = props?.data?.nonIntegrated || props?.nonIntegrated;
 
 	window.business = props?.data;
 
 	const defaultTitle = "Choose a coin to pay with:";
 	const [view, setView] = React.useState(0);
 	const [viewTitle, setViewTitle] = React.useState(defaultTitle);
-	
+	const { business_id } = useParams();
 
 	const [loading, setLoading] = React.useState(true);
 	const [processStatus, setProcessStatus] = React.useState("");
-	const [coin, setCoint] = React.useState({ coin: "ETH", amount: 0.002833646 });
 
 	// const [data, setData] = React.useState({ user: {} });
 	const [config, setConfig] = React.useState({ mode: "AUTO" });
 
-	// const [info, setInfo] = React.useState();
-	const [coins, setCoins] = React.useState([]);
 	const [validatedMobile, setValidatedMobile] = React.useState();
 
 	const setMobilePhone = (n) => {
-		// setData({...data, phone: n})
 		props.updateData({ data: { ...data, phone: n } });
 	}
 
@@ -62,7 +61,6 @@ const KryptonPayCheckout = (props) => {
 	};
 
 	const restartProcess = () => {
-		setCoint({});
 		setView(0);
 		setViewTitle(defaultTitle);
 	};
@@ -73,23 +71,54 @@ const KryptonPayCheckout = (props) => {
 
 	const initialize = (d) => {
 		//setViewTitle(" ")
-		if (!business?.identifier){
+		if (!business?.identifier || !others?.amount){
+
 			props.updateData({ info: { message: "Initializing...", status: "processing" } })
-			props.updateData({ data: d });
+			props.updateData({ data: d, mode: d?.viewmode });
 			setConfig({ mode: d?.viewmode });
 			props.updatePrices(d, null);
+			setLoading(false);
+			
+		}else{
+			setLoading(false);
 		}
+
 	};
 
 	React.useEffect(() => {
-		window.parent.postMessage({ action: "initialize", krypton_pay: true }, "*");
-		window.onmessage = (e) => {
-			if ( e?.data?.phone && e?.data?.key ){
-				props.updateData({ data: {...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {} });
-				initialize(e?.data || {});
-				setLoading(false);
+		if(nonIntegrated){
+			if(!business?.identifier){
+
+				props.updateData({ nonIntegrated: true });
+				api.get({}, `/business/${business_id}/getbusiness`)
+				.then(res => {
+					props.updateData({ business: res });
+					setLoading(false);
+				}).catch(err => {
+					console.log(err)
+					alert("Failed")
+				})
+
+			}else{
+				
+				const d = { ...props?.data?.data, key: business?.key };
+				if(d?.key){
+					initialize(d);
+				}else{
+					setLoading(false);
+				}
 			}
-		};
+		}else{
+			window.parent.postMessage({ action: "initialize", krypton_pay: true }, "*");
+			window.onmessage = (e) => {
+				if ( e?.data?.phone && e?.data?.key ){
+					props.updateData({ data: {...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {} });
+					initialize(e?.data || {});
+					setLoading(false);
+				}
+			};
+		}
+
 
 		// const e = { 
 		// 	key: "pk_test_cb8daec88491a8021c0dcc48d461a0c49720ce1a", // Required
@@ -104,6 +133,7 @@ const KryptonPayCheckout = (props) => {
 		// // setData({...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {});
 		// initialize(e);
 		// setLoading(false);
+
 	}, []);
 
 	return (
@@ -120,56 +150,65 @@ const KryptonPayCheckout = (props) => {
 						changeCoin={() => restartProcess()}
 						view={view}
 						loading={loading}
+						changeTheme={() => {
+							props.updateData({ mode: props?.data?.mode === "light" ? "dark" : "light" })
+						}}
 					>
 						{(info?.status && <KPLoader {...info} />) || (
 							<>
-								<div
-									className="experience-item"
-									style={{
-										display: "inline-flex",
-										alignItems: "center",
-										width: "100%",
-										paddingBottom: 14,
-										borderBottom: "1px solid #e0e0e0",
-									}}
-								>
-									<img
-										style={{ width: 40, height: 40, borderRadius: 6 }}
-										src="https://logomakershop.com/__/img/logo994.png"
-										alt="shop-logo"
-									/>
+
+									<>
 									<div
-										className="meta"
-										style={{ width: "calc(100% - 50px)", textAlign: "right" }}
+										className="experience-item"
+										style={{
+											display: "inline-flex",
+											alignItems: "center",
+											width: "100%",
+											paddingBottom: 14,
+											borderBottom: "1px solid #e0e0e0",
+										}}
 									>
-										<span
-											className="dark-inverted"
-											style={{ fontWeight: "bold" }}
-										>
-											{business?.name}
-										</span>
-										<br />
-										<span className="dark-inverted">{data?.email}</span>
-										<br />
-										<span>
-											Pay{" "}
-											<strong>
-												{toMoney(others?.amount, others?.fiat_currency+" ")}
-											</strong>
-										</span>
-									</div>
-								</div>
-								<p className="status-label">
-									{viewTitle || defaultTitle}
-									<span style={{ position: "absolute", right: 15 }}>
-										<ClockTiker
-											main={true}
-											styles={{}}
-											callback={refresh}
-											customWrapper={true}
+										<img
+											style={{  height: 40, borderRadius: 6 }}
+											src={business?.image || "https://logomakershop.com/__/img/logo994.png"}
+											alt="shop-logo"
 										/>
-									</span>
-								</p>
+										<div
+											className="meta"
+											style={{ width: "calc(100% - 50px)", textAlign: "right" }}
+										>
+											<span
+												className="dark-inverted"
+												style={{ fontWeight: "bold" }}
+											>
+												{business?.name}
+											</span>
+											<br />
+											<span className="dark-inverted">{data?.email || data?.phone} {data?.name && <><small>[{data?.name}]</small> </>} </span>
+											<br />
+											<span>
+												Pay{" "}
+												<strong>
+													{toMoney(others?.amount || data?.amount, others?.fiat_currency)}
+												</strong>
+											</span>
+										</div>
+									</div>
+									{!props?.fullscreen && (
+									<p className="status-label mt-2 mb-2">
+										{viewTitle || defaultTitle}
+										{/* <span style={{ position: "absolute", right: 15 }}>
+											<ClockTiker
+												main={true}
+												styles={{}}
+												callback={refresh}
+												customWrapper={true}
+											/>
+										</span> */}
+									</p>
+									)}
+									</>
+
 								{props?.children}
 							</>
 						)}

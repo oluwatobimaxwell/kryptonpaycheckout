@@ -5,7 +5,9 @@ import { getObject, getString } from "../utils/Functions";
 
 
 // const apiBase = "http://localhost:8000";
-const apiBase = "https://krypton-pay.herokuapp.com";
+// const apiBase = "https://krypton-pay.herokuapp.com";
+
+const apiBase = window.location.hostname === "localhost" ? "http://localhost:8000" : "https://krypton-pay.herokuapp.com";
 
 export class Api {
   constructor(props) {

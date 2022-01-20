@@ -23,10 +23,11 @@ const CoinPicker = (props) => {
 
 	const proceed = ({ coin }) =>{
 		updateData({ selectedCoin: coin });
-		if (!validatedMobile){
-			setOtpview(true);
-			return;
-		}
+		navigator("/transafer-pay");
+		// if (!validatedMobile){
+		// 	setOtpview(true);
+		// 	return;
+		// }
 		props.updateValidatedPhone({ validatedMobile, coin }, (res) => {
 			navigator("/transafer-pay");
 		})
@@ -47,7 +48,7 @@ const CoinPicker = (props) => {
 	}
 
 	return (
-		<KryptonPayCheckout>
+		<KryptonPayCheckout nonIntegrated>
 			{otpview && (
 						<view style={{
 							position: "absolute",
@@ -71,13 +72,14 @@ const CoinPicker = (props) => {
 				{coins.map((coin, i) => {
 					return (
 						<div
-							className={`crypto-button h-button column`}
+							className={`crypto-button h-button column `}
 							key={"coin-list-" + i}
 							style={{
 								paddingBottom: 0,
 								paddingRight: i % 2 === 0 && `${0.75 / 2}rem`,
 								paddingLeft: i % 2 !== 0 && `${0.75 / 2}rem`,
 								width: "50%",
+								minWidth: "50%",
 							}}
 							onClick={() => proceed({ index: i, coin })}
 						>
@@ -106,7 +108,7 @@ const CoinPicker = (props) => {
 									</div>
 									<div className="flex-meta">
 										<span>{coin.coin}</span>
-										<span>{coin.amount_8}</span>
+										<span>{coin.coin_name}</span>
 									</div>
 									<div className="flex-end"></div>
 								</div>

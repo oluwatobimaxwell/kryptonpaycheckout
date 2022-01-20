@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { SvgIcon } from './SvgIcon';
 const changeMode = () => {
@@ -15,13 +16,13 @@ const changeMode = () => {
   
   
 
-export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loading }) => {
+export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loading, changeTheme }) => {
 
     const [mode, setMode] = React.useState(true)
   
     const change = () => {
-      changeMode()
-      setMode(!mode)
+      changeMode();
+      setMode(!mode);
     }
   
     React.useEffect(() => {
@@ -58,7 +59,7 @@ export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loadi
             </div>
           </div>
           <button className="h-modal-close ml-auto" onClick={change}>
-          <a className="code-trigger is-active">
+          <a className="code-trigger is-active" onClick={() => changeTheme && changeTheme()}>
            <SvgIcon name={mode?"moon":"sun"} size={15} />
         </a>
           </button>
@@ -96,7 +97,8 @@ export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loadi
   
   
           <div className="modal-footer-logo">
-          <img className="avatar" src={'./images/logo-big.png'}  alt="logo" />
+          {/* <img className="avatar" src={'./images/logo-big.png'}  alt="logo" /> */}
+          <img className="avatar" src={require("../assets/images/logo-big.png").default}  alt="logo" />
           </div>
           </div>
         </div>

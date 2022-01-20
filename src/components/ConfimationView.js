@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { updateData } from '../Redux/Data/actions'
 import { KPLoader } from './KPLoader'
 import KryptonPayCheckout from './KryptonPayCheckout'
@@ -12,15 +13,22 @@ const ConfimationView = (props) => {
   const defaultMsg = "Processing your payment, please wait..."
   const [status, setStatus] = React.useState('processing')
   const [message, setMessage] = React.useState(defaultMsg)
-
+  const navigate = useNavigate()
 
   const onContinue = () => {
     window.parent.postMessage({ action: "successpayment", data: {}, krypton_pay: true }, "*");
   }
 
   const restartProcess = () => {
+    if(!props?.data?.business){
+      navigate("/");
+    }
     window.parent.postMessage({ action: paymentStatus?.status ? "successpayment" : "failedpayment", data: paymentStatus, krypton_pay: true }, "*");
   }
+
+  React.useEffect(() => {
+    if(!coin?.coin) navigate("/")
+  }, [])
 
   return (
 		<KryptonPayCheckout>
@@ -29,10 +37,12 @@ const ConfimationView = (props) => {
 					<div className="l-card">
               <KPLoader
                 status={paymentStatus?.status ? 'success' : 'failed'}
-                message={`${paymentStatus?.message} .Your transaction reference is <strong>${paymentStatus?.data?.reference}</strong>`} 
-                image={coin.coin} 
+                message={`${paymentStatus?.message}. Your transaction reference is <strong>${paymentStatus?.reference}</strong>`} 
+                image={coin?.coin} 
                 restartProcess={restartProcess}
                 onContinue={onContinue}
+                paymentStatus={paymentStatus}
+                merchant={props?.initialize?.merchant}
               />
 					</div>
 				</div>
