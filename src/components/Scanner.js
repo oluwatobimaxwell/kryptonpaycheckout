@@ -23,9 +23,29 @@ export const QRScanner = ({ callback }) => {
 			else window.location = `/pay/${e?.text}`
 		}
 	}
-	return <QrReader
+
+	const [facingMode, setfacingMode] = React.useState("rear")
+
+	return <div style={{ width: "100%" }} >
+
+		<button className="button is-primary is-circle is-elevated"
+			onClick={() => setfacingMode(facingMode === "rear" ? "front": "rear")}
+			style={{
+				position: "absolute",
+				top: 120, right: 35,
+				zIndex: 90000,
+				cursor: "pointer"
+			}}
+		>
+		<span className="icon is-small">
+			<i className={`mdi mdi-camera-${facingMode === "rear" ? "front": "rear"}-variant`} />
+		</span>
+		</button>
+
+
+		<QrReader
 				delay={1000}
-				facingMode={"rear"}
+				facingMode={facingMode}
 				legacyMode={true}
 				style={{
 					height: 240,
@@ -37,6 +57,7 @@ export const QRScanner = ({ callback }) => {
 				onError={handleError}
 				onScan={handleScan}
 	/>
+	</div>
 }
 
 
