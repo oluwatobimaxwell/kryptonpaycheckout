@@ -5,15 +5,24 @@ export class Socket {
 
     init({ identifier, callback, messageHandler }) {
         this.identifier = identifier;
-        this.reconnect(identifier);
+        this.messageHandler = messageHandler;
+        this.reconnect();
+        return this.socket;
+    }
 
+    close = () => {
+        this.socket && this.socket.close()
+    }
+
+    reconnect = () => {
+        this.socket = new window.WebSocket(`${socketUrl}${this.identifier}`);
         this.socket.addEventListener("open", async () => {
-            messageHandler({ message: "connected" })
+            this.messageHandler({ message: "connected" })
         });
 
         this.socket.addEventListener("message", event => {
             const message = JSON.parse(event?.data?.toString());
-            messageHandler && messageHandler(message);
+            this.messageHandler && this.messageHandler(message);
         });
 
         this.socket.onclose = (event) => {
@@ -23,16 +32,6 @@ export class Socket {
         this.socket.addEventListener("disconnected", event => {
             this.reconnect()
         });
-
-        return this.socket;
-    }
-
-    close = () => {
-        this.socket && this.socket.close()
-    }
-
-    reconnect = (identifier=null) => {
-        this.socket = new window.WebSocket(`${socketUrl}${identifier||this.identifier}`);
     }
 
     send({message, callback}) {
