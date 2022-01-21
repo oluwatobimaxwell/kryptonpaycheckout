@@ -414,7 +414,6 @@ const TransferPay = (props) => {
 		props.updateData({ validatedMobile: m })
 	}
 
-
 	const messageHandler = (message) => {
 		console.log("Received", message)
 		if(message?.message?.identifier){
