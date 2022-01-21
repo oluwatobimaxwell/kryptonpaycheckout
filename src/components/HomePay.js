@@ -10,11 +10,11 @@ import KryptonPayCheckout from "./KryptonPayCheckout";
 export const ValidatedInput = (props) => {
 	const [validate, setValidate] = React.useState()
 	
-	React.useEffect(() => {
-		const valid = props?.validate && props?.validate(props?.value);
-		setValidate(valid);
-		if(valid) props?.setChecks(valid?.status)
-	}, [])
+	// React.useEffect(() => {
+	// 	const valid = props?.validate && props?.validate(props?.value);
+	// 	setValidate(valid);
+	// 	if(valid) props?.setChecks(valid?.status)
+	// }, [])
 
 	return (
 		<div className={`field ${props?.className||""}`}>
