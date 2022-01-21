@@ -15,8 +15,11 @@ export const QRScanner = ({ callback }) => {
 		console.log(e)
 	}
 	const handleScan = (e) => {
-		if(e?.text?.includes("http")) window.location = e?.text
-		else  callback && callback(e?.text)
+		if(e?.text){
+			if(e?.text?.includes("http")) window.location = e?.text
+			// else  callback && callback()
+			else window.location = `/pay/${e?.text}`
+		}
 	}
 	return <QrReader
 	delay={100}
@@ -41,17 +44,20 @@ const Scanner = (props) => {
 	const [status, setStatus] = React.useState("processing");
 	const [businessId, setBusinessId] = React.useState(business_id);
 	const [loading, setLoading] = React.useState(false);
+	const navigate = useNavigate()
 
   const startPayment = async () => {
 	setLoading(true);
 	const res = await api.get({}, `/business/${businessId}/getbusiness`);
-	console.log(res)
-	props.updateData({ business: res });
-	setLoading(false);
+	if(res?.identifier){
+		props.updateData({ business: res });
+		setLoading(false);
+		navigate(`/pay/${businessId}`)
+	}
   }
 
 
-const form = [
+const [form, setForm] = React.useState([
 	{
 		name: "amount",
 		label: "Vendor ID",
@@ -59,7 +65,21 @@ const form = [
 		type: "text",
     	value: businessId || ""
 	}
-];
+])
+
+const attachScanner = () => {
+	const check = form.find(e => e.type === "scanner")
+	if(!check){
+		setForm([...form,
+			{
+		isLine: true
+	},
+	{
+		type: "scanner"
+	}
+		])
+	}
+}
   
 
 
@@ -89,10 +109,10 @@ const form = [
 								);
 							}
 							
-							// if(e.type === "scanner") return <QRScanner callback={e => setBusinessId(e)} />
+							if(e.type === "scanner") return <QRScanner callback={e => setBusinessId(e)} />
 							return (
-								<div className="field">
-									<div className="control has-icon">
+								<div className="field has-addons">
+									<div className="control has-icon is-expanded">
 										<input
 											type={e.type || "text"}
 											className="input"
@@ -108,6 +128,13 @@ const form = [
 											dangerouslySetInnerHTML={{ __html: getIcon(e.icon) }}
 										/>
 									</div>
+									<div class="control" stylr={{ height: 45 }}>
+              <a class="button is-primary" style={{ height: "100%" }}
+			  	onClick={() => attachScanner()}
+			  >
+				  <i className="mdi mdi-qrcode-scan " style={{ fontSize: 18 }} />
+              </a>
+          </div>
 								</div>
 							);
 						})}

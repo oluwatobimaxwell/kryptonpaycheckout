@@ -586,7 +586,9 @@ body.is-dark .glass-box {
 	max-width: 450px !important;
 }
 
-
+.mdi.mdi-qrcode-scan {
+	font-size: 20px !important;
+}
 
 @page {
 	size: A4;
