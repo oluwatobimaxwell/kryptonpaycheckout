@@ -23,11 +23,17 @@
     .h-modal .modal-content .modal-card .modal-card-head {
         border-radius: 0;
     }
+
+
     
     .h-modal .modal-content .modal-card .modal-card-foot {
         border-radius: 0 !important;
     }
     
+
+    .modal-card {
+        min-height: 100vh !important;
+    }
     }
     
     
