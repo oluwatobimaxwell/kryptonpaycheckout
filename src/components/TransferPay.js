@@ -415,7 +415,7 @@ const TransferPay = (props) => {
 	}
 
 	const messageHandler = (message) => {
-		console.log("Received", message)
+		console.log("Received", message) 
 		if(message?.message?.identifier){
 			props.updateData({ paymentStatus: message?.message });
 			if([1,0].includes(message?.message?.status)){
