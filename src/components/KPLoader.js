@@ -100,9 +100,9 @@ export const InvoicePrint = (props) => {
 						{lines.map((e, i) => {
 							return (
 								<>
-								<div className="field" style={{ display: "flex" }}>
+								<div className="field" style={{ display: "flex", overflowWrap: "break-word" }}>
 									<p className="print-left">{e.name}:</p>
-									<p className="print-right">{e.value}</p>
+									<p className="print-right" style={{ overflowWrap: "break-word" }}>{e.value}</p>
 								</div>
 								{i < lines.length - 1 && <hr />}
 								</>
