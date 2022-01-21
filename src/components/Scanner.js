@@ -22,6 +22,7 @@ export const QRScanner = ({ callback }) => {
 		}
 	}
 	return <QrReader
+	facingMode={"rear"}
 	delay={100}
 	style={{
 		height: 240,
