@@ -437,6 +437,9 @@ const TransferPay = (props) => {
 	React.useEffect(() => {
 		if(!coin?.coin) navigate("/")
 		else socket.init({ identifier: props?.data?.transactionId, messageHandler });
+		return () => {
+			socket && socket.close()
+		}
 	}, []);
 
 	return (
@@ -542,7 +545,17 @@ const TransferPay = (props) => {
 						{/* <hr style={{ marginTop: 15, marginBottom: 0 }} /> */}
 						{view === 0 && (
 							<div className="media-flex-center mt-3">
-							
+								<style>
+									{`
+										.is-squared.qr-code svg{
+											width: 90px !important;
+											height: 90px !important;
+											margin: 5px !important;
+											margin-top: 15px !important;
+											border-radius: 0px !important;
+										}
+									`}
+								</style>
 								<div
 									className="h-icon x-large is-large is-squared qr-code "
 									style={{ 
