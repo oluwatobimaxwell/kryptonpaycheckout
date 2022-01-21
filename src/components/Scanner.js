@@ -24,17 +24,18 @@ export const QRScanner = ({ callback }) => {
 		}
 	}
 	return <QrReader
-	facingMode={"rear"}
-	delay={100}
-	style={{
-		height: 240,
-		width: "100%",
-		borderRadius: 5,
-		padding: 10,
-		background: "#000"
-	  }}
-	onError={handleError}
-	onScan={handleScan}
+				delay={1000}
+				facingMode={"rear"}
+				legacyMode={true}
+				style={{
+					height: 240,
+					width: "100%",
+					borderRadius: 5,
+					padding: 10,
+					background: "#000"
+				}}
+				onError={handleError}
+				onScan={handleScan}
 	/>
 }
 
@@ -97,6 +98,8 @@ const attachScanner = () => {
 		type: "scanner"
 	}
 		])
+	}else{
+		setForm(form.filter(e => e.name === "vendor_id"))
 	}
 }
 
