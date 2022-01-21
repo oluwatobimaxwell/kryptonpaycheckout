@@ -54,17 +54,17 @@ export const updateValidatedPhone = (input = {}, callback) => {
 		if(!input?.forceUpdate){
 
 			if(paymentCoin && paymentCoin?.coin === selectedCoinR?.coin && paymentCoin?.address === selectedCoinR?.address && transactionId && timeChange < 5){
-				dispatch({ paymentCoin: selectedCoinR, type: UPDATE })
+				dispatch({ ...getState().data, paymentCoin: selectedCoinR, type: UPDATE })
 				callback && callback(true)
 				return;
 			}
 			if(selectedCoinR?.address && transactionId && timeChange < 5){
-				dispatch({ paymentCoin: selectedCoinR, type: UPDATE })
+				dispatch({...getState().data, paymentCoin: selectedCoinR, type: UPDATE })
 				callback && callback(true)
 				return;
 			}
 
-			dispatch({ info: { message: "Updating transaction, please wait...", status: "processing" }, type: UPDATE })
+			dispatch({ ...getState().data, info: { message: "Updating transaction, please wait...", status: "processing" }, type: UPDATE })
 		}
 
 
@@ -132,9 +132,7 @@ export const continuousConfirmation = (callback) => {
 				.then(res => {
 					dispatch({ paymentStatus: res, type: UPDATE });
 					callback && callback(res);
-					if(res?.tarminate){
-						clearInterval(interval)
-					}
+					if(res?.tarminate) clearInterval(interval);
 				}).catch(err => {
 					console.log(err)
 				})

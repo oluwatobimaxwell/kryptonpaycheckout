@@ -99,6 +99,13 @@ const attachScanner = () => {
 		])
 	}
 }
+
+
+React.useEffect(() => {
+	setChecks({
+		vendor_id: form.find(e => e.name === "vendor_id").validate((businessId === "undefined" ? "" : businessId) || "").status,
+	})
+}, [])
   
 
 

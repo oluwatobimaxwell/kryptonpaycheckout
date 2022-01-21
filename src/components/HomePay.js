@@ -9,6 +9,13 @@ import KryptonPayCheckout from "./KryptonPayCheckout";
 
 export const ValidatedInput = (props) => {
 	const [validate, setValidate] = React.useState()
+	
+	React.useEffect(() => {
+		const valid = props?.validate && props?.validate(props?.value);
+		setValidate(valid);
+		if(valid) props?.setChecks(valid?.status)
+	}, [])
+
 	return (
 		<div className={`field ${props?.className||""}`}>
 			<div className={`control is-expanded has-icon ${validate ? `has-validation has-${validate?.status?"success":"error"}` : ""}`}>
@@ -80,14 +87,10 @@ const HomePay = (props) => {
 		);
 	};
 
-  React.useEffect(() => {
-    props.updateData({ nonIntegrated: true });
-  }, [])
 
 const [checks, setChecks] = React.useState({});
 
 const isValidated = () => {
-	console.log(checks)
 	if(checks?.amount  && checks?.name && checks?.phone) return true;
 	return false;
 }
@@ -135,6 +138,15 @@ const form = [
 		}
 	},
 ];
+
+	React.useEffect(() => {
+		props.updateData({ nonIntegrated: true });
+		setChecks({
+			name: form.find(e => e.name === "name").validate(initialdata?.name).status,
+			amount: form.find(e => e.name === "amount").validate(initialdata?.amount).status,
+			phone: form.find(e => e.name === "phone").validate(initialdata?.phone).status,
+		})
+	}, [])
   
 
 

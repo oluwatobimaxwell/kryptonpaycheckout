@@ -65,6 +65,8 @@ const KryptonPayCheckout = (props) => {
 	const restartProcess = () => {
 		setView(0);
 		setViewTitle(defaultTitle);
+		props.updateData({ info: {} });
+		navigate(`/pay/${business_id || business?.account_number}`)
 	};
 
 	const refresh = () => {
@@ -145,7 +147,6 @@ const KryptonPayCheckout = (props) => {
 	}, []);
 
 	return (
-
 		<div id="huro-app" className="app-wrapper ">
 			<div className={`pageloader is-full ${loading ? "is-active" : ""}`}></div>
 			<div
@@ -158,15 +159,17 @@ const KryptonPayCheckout = (props) => {
 						changeCoin={() => restartProcess()}
 						view={view}
 						loading={loading}
+						businessId={business_id || business?.account_number}
 						changeTheme={() => {
-							props.updateData({ mode: props?.data?.mode === "light" ? "dark" : "light" })
+							props.updateData({
+								mode: props?.data?.mode === "light" ? "dark" : "light",
+							});
 						}}
 						nonIntegrated={nonIntegrated}
 					>
-						{(info?.status && <KPLoader {...info} />) || (
+						{(info?.status && <KPLoader restartProcess={restartProcess}  {...info} />) || (
 							<>
-
-									<>
+								<>
 									<div
 										className="experience-item"
 										style={{
@@ -178,8 +181,11 @@ const KryptonPayCheckout = (props) => {
 										}}
 									>
 										<img
-											style={{  height: 40, borderRadius: 6 }}
-											src={business?.image || "https://logomakershop.com/__/img/logo994.png"}
+											style={{ height: 40, borderRadius: 6 }}
+											src={
+												business?.image ||
+												"https://logomakershop.com/__/img/logo994.png"
+											}
 											alt="shop-logo"
 										/>
 										<div
@@ -190,26 +196,42 @@ const KryptonPayCheckout = (props) => {
 												className="dark-inverted"
 												style={{ fontWeight: "bold" }}
 											>
-												{business?.error && (business?.message || "Invalid Vendor ID please check and try again.") || business?.name}
+												{(business?.error &&
+													(business?.message ||
+														"Invalid Vendor ID please check and try again.")) ||
+													business?.name}
 											</span>
 											<br />
-											<span className="dark-inverted">{data?.email || data?.phone} {data?.name && <><small>[{data?.name}]</small> </>} </span>
+											<span className="dark-inverted">
+												{data?.email || data?.phone}{" "}
+												{data?.name && (
+													<>
+														<small>[{data?.name}]</small>{" "}
+													</>
+												)}{" "}
+											</span>
 											<br />
 											<span>
 												Pay{" "}
 												<strong>
-													{toMoney(others?.amount || data?.amount, others?.fiat_currency)}
+													{toMoney(
+														others?.amount || data?.amount,
+														others?.fiat_currency,
+													)}
 												</strong>
 											</span>
 										</div>
 									</div>
 									{!props?.fullscreen && (
-									<p className="status-label mt-2 mb-2">
-										{viewTitle || defaultTitle}
-									</p>
+										<p className="status-label mt-2 mb-2">
+											{viewTitle || defaultTitle}
+										</p>
 									)}
-									</>
-								{((!business?.identifier && !window.location.pathname.includes("/pay/")) || business?.error) && <Scanner /> || props?.children}
+								</>
+								{(((!business?.identifier &&
+									!window.location.pathname.includes("/pay/")) ||
+									business?.error) && <Scanner />) ||
+									props?.children}
 							</>
 						)}
 					</KPModal>

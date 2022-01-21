@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { getIcon } from '../utils/Functions';
 import { SvgIcon } from './SvgIcon';
 const changeMode = () => {
     const html = document.getElementsByTagName('html')[0]
@@ -16,7 +18,9 @@ const changeMode = () => {
   
   
 
-export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loading, changeTheme, nonIntegrated }) => {
+export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loading, changeTheme, nonIntegrated, businessId }) => {
+
+    const navigate = useNavigate();
 
     const [mode, setMode] = React.useState(true)
   
@@ -91,6 +95,14 @@ export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loadi
             <SvgIcon name={"close"} />
           </span>
           <span>Cancel Payment</span>
+          </button>
+          )}
+          {nonIntegrated && window.location.pathname === "/" && !loading && (
+          <button onClick={() => {
+            navigate(`/pay/${businessId}`)
+          }} className="button h-button">
+          <span className="icon" dangerouslySetInnerHTML={{ __html: getIcon("edit") }}/>
+          <span>Edit Payment</span>
           </button>
           )}
           

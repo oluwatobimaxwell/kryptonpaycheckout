@@ -21,9 +21,7 @@ const ConfimationView = (props) => {
   }
 
   const restartProcess = () => {
-    if(!props?.data?.business){
-      navigate("/");
-    }
+    navigate("/");
     window.parent.postMessage({ action: paymentStatus?.status ? "successpayment" : "failedpayment", data: paymentStatus, krypton_pay: true }, "*");
   }
 
