@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,6 +7,7 @@ import { getIcon } from "../utils/Functions";
 import KryptonPayCheckout from "./KryptonPayCheckout";
 import QrReader from 'react-qr-scanner'
 import { Api } from "../classes/Api";
+import { ValidatedInput } from "./HomePay";
 
 // { coin = { coin: "usdt" }, restartProcess, changeViewTitle }
 const api = new Api();
@@ -42,7 +44,7 @@ const Scanner = (props) => {
 	const coin = props?.paymentCoin;
 	const paymentStatus = props?.paymentStatus;
 	const defaultMsg = "Processing your payment, please wait...";
-	const [status, setStatus] = React.useState("processing");
+	const [status, setStatus] = React.useState();
 	const [businessId, setBusinessId] = React.useState(business_id);
 	const [loading, setLoading] = React.useState(false);
 	const navigate = useNavigate()
@@ -54,6 +56,8 @@ const Scanner = (props) => {
 	if(res?.identifier){
 		props.updateData({ business: res });
 		navigate(`/pay/${businessId}`)
+	}else{
+		setStatus(res?.message)
 	}
 	setLoading(false);
   }
@@ -61,13 +65,26 @@ const Scanner = (props) => {
 
 const [form, setForm] = React.useState([
 	{
-		name: "amount",
+		name: "vendor_id",
 		label: "Vendor ID",
 		icon: "briefcase",
 		type: "text",
-    	value: (businessId === "undefined" ? "" : businessId) || ""
+    	value: (businessId === "undefined" ? "" : businessId) || "",
+		validate: e => {
+			if(e?.length >= 5){
+				return { status: true, message: "" }
+			}
+			return { status: false, message: `Vendor ID must be atleast 5 characters` }
+		}
 	}
 ])
+
+
+const [checks, setChecks] = React.useState({});
+
+const isValidated = () => {
+	return checks?.vendor_id
+}
 
 const attachScanner = () => {
 	const check = form.find(e => e.type === "scanner")
@@ -96,10 +113,18 @@ const attachScanner = () => {
           }
         `}
 			</style>
+			
 			<div className="field mt-4">
 				<p style={{ marginBottom: 15 }}>
 					Please complete the form below to start payment.
 				</p>
+				{status && (
+					<div class="message is-danger">
+					<div class="message-body">
+						{status}
+					</div>
+				</div>
+				)}
 				<div className="control">
 					<div className="l-card">
 						{form.map((e) => {
@@ -113,36 +138,72 @@ const attachScanner = () => {
 							
 							if(e.type === "scanner") return <QRScanner callback={e => setBusinessId(e)} />
 							return (
-								<div className="field has-addons">
-									<div className="control has-icon is-expanded">
-										<input
-											type={e.type || "text"}
-											className="input"
-											placeholder={e.label}
-                      defaultValue={e.value}
-											style={{ paddingLeft: 50 }}
-											onInput={(evt) =>  {
-												setBusinessId(evt.target.value);
-											}}
-										/>
-										<div
-											className="form-icon mt-1 ml-1"
-											dangerouslySetInnerHTML={{ __html: getIcon(e.icon) }}
-										/>
-									</div>
-									<div class="control" stylr={{ height: 45 }}>
-              <a class="button is-primary" style={{ height: "100%" }}
-			  	onClick={() => attachScanner()}
-			  >
-				  <i className="mdi mdi-qrcode-scan " style={{ fontSize: 18 }} />
-              </a>
-          </div>
-								</div>
-							);
+								<ValidatedInput 
+									{...e}
+									className="has-addons"
+									callback={(evt) =>  {
+										updateData({ [e.name]: evt.target.value });
+										if(e.name === "phone") props.updateData({ validatedMobile: evt.target.value });
+									}}
+									setChecks={valid => {
+										const d = { [e.name] : valid }
+										setChecks({ ...checks, ...d })
+									}}
+									rightAddon={() => {
+										return (
+											<div class="control" stylr={{ height: 45 }}>
+												<a
+													class="button is-primary"
+													style={{ height: "100%" }}
+													onClick={() => attachScanner()}
+												>
+													<i
+														className="mdi mdi-qrcode-scan "
+														style={{ fontSize: 18 }}
+													/>
+												</a>
+											</div>
+										);
+									}}
+								/>
+							)
+							// return (
+							// 	<div className="field has-addons">
+							// 		<div className="control has-icon is-expanded">
+							// 			<input
+							// 				type={e.type || "text"}
+							// 				className="input"
+							// 				placeholder={e.label}
+							// 				defaultValue={e.value}
+							// 				style={{ paddingLeft: 50 }}
+							// 				onInput={(evt) => {
+							// 					setBusinessId(evt.target.value);
+							// 				}}
+							// 			/>
+							// 			<div
+							// 				className="form-icon mt-1 ml-1"
+							// 				dangerouslySetInnerHTML={{ __html: getIcon(e.icon) }}
+							// 			/>
+							// 		</div>
+							// 		<div class="control" stylr={{ height: 45 }}>
+							// 			<a
+							// 				class="button is-primary"
+							// 				style={{ height: "100%" }}
+							// 				onClick={() => attachScanner()}
+							// 			>
+							// 				<i
+							// 					className="mdi mdi-qrcode-scan "
+							// 					style={{ fontSize: 18 }}
+							// 				/>
+							// 			</a>
+							// 		</div>
+							// 	</div>
+							// );
 						})}
 
 						<button className={`button h-button is-primary is-elevated w-100 mt-2 no-border ${loading ? "is-loading":""}`}
               onClick={() => startPayment()}
+			  disabled={!isValidated()}
             >
 							<span>Proceed</span>
 							<span

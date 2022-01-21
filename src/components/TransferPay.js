@@ -544,7 +544,7 @@ const TransferPay = (props) => {
 							<div className="media-flex-center mt-3">
 							
 								<div
-									className="h-icon x-large is-large is-squared "
+									className="h-icon x-large is-large is-squared qr-code "
 									style={{ 
 										minWidth: 90, height: 90, marginRight: 15, marginTop: 15, 
 										borderRadius: 0,
@@ -562,7 +562,12 @@ const TransferPay = (props) => {
 								<style>
 									{`.instruc {
 										font-size: 12.5px !important;
-									}`}
+									}
+									.media-flex-center.qr-code svg {
+										width: 80px !important;
+										height: 80px !important;
+									}
+									`}
 								</style>
 								<div
 									className="instruc"

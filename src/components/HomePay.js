@@ -2,17 +2,50 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { updateData, updatePrices } from "../Redux/Data/actions";
-import { getIcon } from "../utils/Functions";
+import { getIcon, toMoney } from "../utils/Functions";
 import KryptonPayCheckout from "./KryptonPayCheckout";
 
 // { coin = { coin: "usdt" }, restartProcess, changeViewTitle }
 
+export const ValidatedInput = (props) => {
+	const [validate, setValidate] = React.useState()
+	return (
+		<div className={`field ${props?.className||""}`}>
+			<div className={`control is-expanded has-icon ${validate ? `has-validation has-${validate?.status?"success":"error"}` : ""}`}>
+				<input
+					type={props?.type || "text"}
+					className="input"
+					placeholder={props.label}
+					defaultValue={props.value}
+					onInput={(e) => {
+						props?.callback && props?.callback(e);
+						const valid = props?.validate && props?.validate(e?.target?.value);
+						setValidate(valid);
+						if(valid) props?.setChecks(valid?.status)
+					}}
+				/>
+				
+				<div className="form-icon" style={{ height: "100%" }} dangerouslySetInnerHTML={{ __html: getIcon(props.icon) }} />
+				
+				{validate && (
+					<div className={`validation-icon is-${validate?.status ? "success" : "error"}`} 
+						style={{ height: "100%" }}	
+					dangerouslySetInnerHTML={{ __html: getIcon(validate?.status ? "check" : "x") }} />	
+				)}
+			</div>
+			{validate?.message && (
+				<p className={`help ${validate?.status? "success":"danger"}-text`}>{validate?.message}</p>
+			)}
+			{props?.rightAddon && props?.rightAddon()}
+		</div>
+	);
+}
 
 const HomePay = (props) => {
 	const coin = props?.paymentCoin;
 	const paymentStatus = props?.paymentStatus;
 	const defaultMsg = "Processing your payment, please wait...";
-	const [status, setStatus] = React.useState("processing");
+	const [enableButton, setEnableButton] = React.useState(true);
 	const [message, setMessage] = React.useState(defaultMsg);
   const navigate = useNavigate();
   const initialdata = props?.data?.data;
@@ -51,6 +84,13 @@ const HomePay = (props) => {
     props.updateData({ nonIntegrated: true });
   }, [])
 
+const [checks, setChecks] = React.useState({});
+
+const isValidated = () => {
+	console.log(checks)
+	if(checks?.amount  && checks?.name && checks?.phone) return true;
+	return false;
+}
 
 const form = [
 	{
@@ -58,7 +98,13 @@ const form = [
 		label: "Amount in Naira",
 		icon: "shopping-cart",
 		type: "number",
-    value: initialdata?.amount
+    	value: initialdata?.amount,
+		validate: e => {
+			if(Number(e) >= 5000){
+				return { status: true, message: "" }
+			}
+			return { status: false, message: `Amount must be at least ${toMoney(5000)}` }
+		}
 	},
 	{
 		isLine: true,
@@ -67,13 +113,26 @@ const form = [
 		name: "name",
 		label: "Name",
 		icon: "user",
-    value: initialdata?.name
+    	value: initialdata?.name,
+		validate: e => {
+			if(e?.length >= 2){
+				return { status: true, message: "" }
+			}
+			return { status: false, message: `Please enter your name` }
+		}
 	},
 	{
 		name: "phone",
 		label: "Phone",
 		icon: "phone",
-    value: initialdata?.phone
+		type: "tel",
+    	value: initialdata?.phone,
+		validate: e => {
+			if(e?.length >= 11 && e?.length <= 14){
+				return { status: true, message: "" }
+			}
+			return { status: false, message: `Please enter a valid phone number` }
+		}
 	},
 ];
   
@@ -105,30 +164,25 @@ const form = [
 								);
 							}
 							return (
-								<div className="field">
-									<div className="control has-icon">
-										<input
-											type={e.type || "text"}
-											className="input"
-											placeholder={e.label}
-                      defaultValue={e.value}
-											style={{ paddingLeft: 50 }}
-											onInput={(evt) =>  {
-                          updateData({ [e.name]: evt.target.value });
-                          if(e.name === "phone") props.updateData({ validatedMobile: evt.target.value });
-											}}
-										/>
-										<div
-											className="form-icon mt-1 ml-1"
-											dangerouslySetInnerHTML={{ __html: getIcon(e.icon) }}
-										/>
-									</div>
-								</div>
-							);
+								<ValidatedInput 
+									{...e}
+									callback={(evt) =>  {
+										updateData({ [e.name]: evt.target.value });
+										if(e.name === "phone") props.updateData({ validatedMobile: evt.target.value });
+									}}
+									setChecks={valid => {
+										const d = { [e.name] : valid }
+										setChecks({ ...checks, ...d })
+									}}
+								/>
+							)
 						})}
 
 						<button className="button h-button is-primary is-elevated w-100 mt-2 no-border"
-              onClick={() => startPayment()}
+              onClick={() => {
+				  if(isValidated()) startPayment()
+			  }}
+			  disabled={!isValidated()}
             >
 							<span>Proceed</span>
 							<span

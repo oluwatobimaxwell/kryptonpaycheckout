@@ -17,6 +17,7 @@ const ConfimationView = (props) => {
 
   const onContinue = () => {
     window.parent.postMessage({ action: "successpayment", data: {}, krypton_pay: true }, "*");
+    navigate("/");
   }
 
   const restartProcess = () => {

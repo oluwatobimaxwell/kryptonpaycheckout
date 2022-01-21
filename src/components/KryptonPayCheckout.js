@@ -161,6 +161,7 @@ const KryptonPayCheckout = (props) => {
 						changeTheme={() => {
 							props.updateData({ mode: props?.data?.mode === "light" ? "dark" : "light" })
 						}}
+						nonIntegrated={nonIntegrated}
 					>
 						{(info?.status && <KPLoader {...info} />) || (
 							<>
@@ -205,14 +206,6 @@ const KryptonPayCheckout = (props) => {
 									{!props?.fullscreen && (
 									<p className="status-label mt-2 mb-2">
 										{viewTitle || defaultTitle}
-										{/* <span style={{ position: "absolute", right: 15 }}>
-											<ClockTiker
-												main={true}
-												styles={{}}
-												callback={refresh}
-												customWrapper={true}
-											/>
-										</span> */}
 									</p>
 									)}
 									</>

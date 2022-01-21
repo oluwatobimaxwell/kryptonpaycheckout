@@ -16,7 +16,7 @@ const changeMode = () => {
   
   
 
-export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loading, changeTheme }) => {
+export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loading, changeTheme, nonIntegrated }) => {
 
     const [mode, setMode] = React.useState(true)
   
@@ -85,12 +85,14 @@ export const KPModal = ({ children, view = 0, changeCoin, initMode='AUTO', loadi
               <span>Change Coin</span>
               </button>
             )}
+          {!nonIntegrated && (
           <button onClick={cancel} className="button h-button">
           <span className="icon">
             <SvgIcon name={"close"} />
           </span>
           <span>Cancel Payment</span>
           </button>
+          )}
           
           </div>
         )}
