@@ -418,8 +418,9 @@ const TransferPay = (props) => {
 	const messageHandler = (message) => {
 		if(message?.message?.identifier){
 			props.updateData({ paymentStatus: message?.message });
-			navigate("/confirmation-view")
-			socket.close()
+			if([1,0].includes(message?.message?.status)){
+				navigate("/confirmation-view")
+			}
 		}
 	}
 
