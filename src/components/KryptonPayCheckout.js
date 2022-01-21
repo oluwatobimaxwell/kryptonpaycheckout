@@ -10,7 +10,7 @@ import parsePhoneNumber, { formatNumber } from 'libphonenumber-js';
 import { toMoney } from "../utils/Functions";
 import { connect } from "react-redux";
 import { updateData, updatePrices } from "../Redux/Data/actions";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const api = new Api();
 // const ws = new Socket()
@@ -22,6 +22,7 @@ export const formatPhoneNumberInt = (d) => {
 
 const KryptonPayCheckout = (props) => {
 
+	const navigate = useNavigate();
 
 	const business = props?.data?.initialize?.merchant || props?.data?.business || {};
 	const others = props?.data?.initialize?.others || {};
@@ -87,6 +88,11 @@ const KryptonPayCheckout = (props) => {
 
 	React.useEffect(() => {
 		if(nonIntegrated){
+
+			if((!data?.amount || data?.amount < 100 || !data?.phone) & (!window.location.pathname.includes("/pay/"))){
+				navigate(`/pay/${business?.account_number}`)
+			}
+
 			if(!business?.identifier){
 
 				props.updateData({ nonIntegrated: true });
