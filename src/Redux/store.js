@@ -4,6 +4,6 @@ import rootReducer from "./rootReducer";
 import thunk from 'redux-thunk';
 
 
-const composedEnhancer = window.location.hostname === "localhost" ? compose(applyMiddleware(thunk), composeWithDevTools()) : applyMiddleware(thunk)
+const composedEnhancer = window.location.hostname === "localhostx" ? compose(applyMiddleware(thunk), composeWithDevTools()) : applyMiddleware(thunk)
 const store = createStore(rootReducer, composedEnhancer);
 export default store;

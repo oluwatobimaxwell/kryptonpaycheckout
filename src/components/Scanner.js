@@ -50,11 +50,12 @@ const Scanner = (props) => {
   const startPayment = async () => {
 	setLoading(true);
 	const res = await api.get({}, `/business/${businessId}/getbusiness`);
+	console.log(res)
 	if(res?.identifier){
 		props.updateData({ business: res });
-		setLoading(false);
 		navigate(`/pay/${businessId}`)
 	}
+	setLoading(false);
   }
 
 
@@ -64,7 +65,7 @@ const [form, setForm] = React.useState([
 		label: "Vendor ID",
 		icon: "briefcase",
 		type: "text",
-    	value: businessId || ""
+    	value: (businessId === "undefined" ? "" : businessId) || ""
 	}
 ])
 

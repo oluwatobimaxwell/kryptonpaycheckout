@@ -45,15 +45,8 @@ export class Api {
     if (!endpoint) return;
     return this.useToken((token) => {
       return axios
-        .get(
-          `${apiBase}${endpoint}?${new URLSearchParams(
-            data
-          ).toString()}`,
-          this.getHeaders(token)
-        )
-        .then((res) => {
-          return res.data;
-        })
+        .get(`${apiBase}${endpoint}?${new URLSearchParams(data).toString()}`, this.getHeaders(token))
+        .then((res) => { return res.data; })
         .catch((err) => {
           return { error: true, data: err?.response?.data };
         });
