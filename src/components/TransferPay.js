@@ -426,6 +426,7 @@ const TransferPay = (props) => {
 
 	const indicatePaid = () => {
 		setView(1);
+		if(socket) socket.reconnect()
 	}
 
 	React.useEffect(() => {
