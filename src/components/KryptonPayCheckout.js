@@ -11,6 +11,7 @@ import { toMoney } from "../utils/Functions";
 import { connect } from "react-redux";
 import { updateData, updatePrices } from "../Redux/Data/actions";
 import { useNavigate, useParams } from "react-router-dom";
+import Scanner from "./Scanner";
 
 const api = new Api();
 // const ws = new Socket()
@@ -89,18 +90,19 @@ const KryptonPayCheckout = (props) => {
 	React.useEffect(() => {
 		if(nonIntegrated){
 
+
 			if((!data?.amount || data?.amount < 100 || !data?.phone) & (!window.location.pathname.includes("/pay/"))){
 				navigate(`/pay/${business?.account_number}`)
 			}
 
-			if(!business?.identifier){
-
+			if(!business?.identifier || window.location.pathname.includes("/pay/")){
 				props.updateData({ nonIntegrated: true });
 				api.get({}, `/business/${business_id}/getbusiness`)
 				.then(res => {
 					props.updateData({ business: res });
 					setLoading(false);
-				}).catch(err => {
+				})
+				.catch(err => {
 					console.log(err)
 					alert("Failed")
 				})
@@ -187,7 +189,7 @@ const KryptonPayCheckout = (props) => {
 												className="dark-inverted"
 												style={{ fontWeight: "bold" }}
 											>
-												{business?.name}
+												{business?.error && (business?.message || "Invalid Vendor ID please check and try again.") || business?.name}
 											</span>
 											<br />
 											<span className="dark-inverted">{data?.email || data?.phone} {data?.name && <><small>[{data?.name}]</small> </>} </span>
@@ -214,8 +216,7 @@ const KryptonPayCheckout = (props) => {
 									</p>
 									)}
 									</>
-
-								{props?.children}
+								{((!business?.identifier && !window.location.pathname.includes("/pay/")) || business?.error) && <Scanner /> || props?.children}
 							</>
 						)}
 					</KPModal>
