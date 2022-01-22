@@ -142,7 +142,7 @@ const KryptonPayCheckout = (props) => {
 		// props.updateData({ data: {...e, phone: formatPhoneNumberInt(e?.phone) } || {} });
 		// // setData({...e?.data, phone: formatPhoneNumberInt(e?.data?.phone) } || {});
 		// initialize(e);
-		// setLoading(false);
+		setLoading(false);
 
 	}, []);
 

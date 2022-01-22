@@ -3,6 +3,7 @@ import React from "react";
 import { SvgIcon } from "./SvgIcon";
 import { getIcon, toMoney } from "../utils/Functions";
 import ReactToPrint from "react-to-print";
+import QRCode from "react-qr-code";
 
 export const KPSpinner = ({ image }) => {
 	return (
@@ -93,8 +94,9 @@ export const InvoicePrint = (props) => {
 			</style>
 			<div className="field mt-4">
 				<p style={{ marginBottom: 15 }}>
-					Please complete the form below to start payment.
+					See payment details below:
 				</p>
+			
 				<div className="control">
 					<div className="l-card">
 						{lines.map((e, i) => {
@@ -109,6 +111,14 @@ export const InvoicePrint = (props) => {
 							);
 						})}
 					</div>
+				</div>
+				<div style={{ width: 120, height: 120, margin: "auto", marginTop: 15 }}>
+				<QRCode
+					bgColor={props?.mode === "dark" ? "#323236" : "#fff"} 
+					fgColor={props?.mode === "dark" ? "#9898a0" : "#000"} 
+					size={120} 
+					value={`KP-${props?.identifier}`} 
+				/>
 				</div>
 			</div>
 		</>
