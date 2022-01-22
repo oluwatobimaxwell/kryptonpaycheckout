@@ -113,7 +113,7 @@ export const updateValidatedPhone = (input = {}, callback) => {
 					});
 					callback && callback(true)
 				} else {
-					dispatch({ updatingCoin: false, info: { message: "Unable to generate deposit address for this transaction, please try again later or contact us.", status: "failed" }, type: UPDATE })
+					dispatch({ updatingCoin: false, info: { message: `${selectedCoinR?.coin} network is currenly not available, please try again later or pay with another coin.`, status: "failed" }, type: UPDATE })
 				}
 
 			}).catch((err) => {
