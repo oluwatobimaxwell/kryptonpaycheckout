@@ -174,7 +174,7 @@ React.useEffect(() => {
 									className="has-addons"
 									callback={(evt) =>  {
 										updateData({ [e.name]: evt.target.value });
-										if(e.name === "phone") props.updateData({ validatedMobile: evt.target.value });
+										setBusinessId(evt.target.value)
 									}}
 									setChecks={valid => {
 										const d = { [e.name] : valid }
