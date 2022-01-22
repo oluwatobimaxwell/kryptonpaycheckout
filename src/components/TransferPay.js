@@ -496,7 +496,7 @@ const TransferPay = (props) => {
 									</div>
 									<CopyText icon={"copy"} text={coin.amount} />
 								</div>
-								<div
+								{/* <div
 									style={{
 										display: "flex",
 										alignItems: "flex-end",
@@ -509,7 +509,7 @@ const TransferPay = (props) => {
 										</div>
 									</div>
 								</div>
-								
+								 */}
 							</div>
 						</div>
 						<hr/>
