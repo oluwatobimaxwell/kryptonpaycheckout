@@ -62,7 +62,12 @@ export const InvoicePrint = (props) => {
 		{ name: "Vendor Name", value: props?.merchant?.name },
 		// { isLine: true },
 		{ name: "Amount", value: toMoney(props?.amount_fiat, props?.currency_fiat) },
-		{ name: "Crypto Amount", value: toMoney(props?.amount_crypto, props?.currency_crypto) },
+		{ name: "Crypto Amount", value: toMoney(
+											props?.amount_crypto, 
+											props?.currency_crypto,
+											`${props?.amount_crypto}`
+                    							?.split(".")[1]?.length || 2
+											) },
 		{ name: "Reference", value: props?.reference },
 		{ name: "TXiD", value: props?.txid },
 		{ name: "Message", value: props?.message+". "+props?.note },

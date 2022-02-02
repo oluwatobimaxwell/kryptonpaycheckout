@@ -13,7 +13,7 @@ import { KPLoader } from "./KPLoader";
 import { Api } from "../classes/Api";
 import { formatPhoneNumberInt } from "./KryptonPayCheckout";
 import { connect } from "react-redux";
-import { continuousConfirmation, updateData } from "../Redux/Data/actions";
+import { updateData } from "../Redux/Data/actions";
 import KryptonPayCheckout from './KryptonPayCheckout';
 import { useNavigate } from "react-router-dom";
 import ClockTiker from "./others";
@@ -637,7 +637,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		updateData: (e) => dispatch(updateData(e)),
-		continuousConfirmation: (e) => dispatch(continuousConfirmation(e)),
 	};
 };
 

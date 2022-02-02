@@ -13,8 +13,10 @@ export function shortMoney(value) {
   return num;
 }
 
-export const toMoney = (amount = 0, symbol="₦", formatter) => {
-  var money = (Math.abs(amount) || 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+export const toMoney = (amount = 0, symbol="₦", fix=2, formatter) => {
+  var money = (Math.abs(amount) || 0)
+                  .toFixed(fix)
+                  .replace(/\d(?=(\d{3})+\.)/g, "$&,");
   if(formatter) return formatter((symbol || "₦"), money);
   return (
     (amount < 0 ? "-" : "") +

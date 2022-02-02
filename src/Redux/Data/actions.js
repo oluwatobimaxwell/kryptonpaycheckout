@@ -83,7 +83,7 @@ export const updateValidatedPhone = (input = {}, callback) => {
 
 		dispatch({ updatingCoin: true, type: UPDATE });
 
-		api.post({ ...payload }, `/transaction/gateway/start_payment/`)
+		( transactionId ? api.post({ ...payload }, `/transaction/gateway/${transactionId}/refresh_payment/`) : api.post({ ...payload }, `/transaction/gateway/start_payment/`))
 			.then((res) => {
 				
 				if (res?.data?.address) {
@@ -112,8 +112,9 @@ export const updateValidatedPhone = (input = {}, callback) => {
 						type: UPDATE
 					});
 					callback && callback(true)
+
 				} else {
-					dispatch({ updatingCoin: false, info: { message: `${selectedCoinR?.coin} network is currenly not available, please try again later or pay with another coin.`, status: "failed" }, type: UPDATE })
+					dispatch({ updatingCoin: false, info: { message: res?.message || `${selectedCoinR?.coin} network is currenly not available, please try again later or pay with another coin.`, status: "failed" }, type: UPDATE })
 				}
 
 			}).catch((err) => {
@@ -123,25 +124,23 @@ export const updateValidatedPhone = (input = {}, callback) => {
 }
 
 
-export const continuousConfirmation = (callback) => {
+export const refreshPayment = (callback) => {
 	return async (dispatch, getState) => {
 		const { transactionId, initialize, paymentStatus } = getState().data
-		const interval = setInterval(() => {
-			if (!paymentStatus?.terminate){
-				api.post({ transactionId }, `/transaction/gateway/${initialize?.merchant?.identifier}/confirm_payment/`)
-				.then(res => {
-					dispatch({ paymentStatus: res, type: UPDATE });
-					callback && callback(res);
-					if(res?.tarminate) clearInterval(interval);
-				}).catch(err => {
-					console.log(err)
-				})
-			}else {
-				clearInterval(interval)
-			}
-		}, 1000 * 60);
+
+		const res = await api.post({ }, `/transaction/gateway/${transactionId}/refresh_payment/`);
+
+			api.post({ transactionId }, `/transaction/gateway/${transactionId}/confirm_payment/`)
+			.then(res => {
+				dispatch({ paymentStatus: res, type: UPDATE });
+				callback && callback(res);
+			}).catch(err => {
+				console.log(err)
+			})
+
 	}
 }
+
 function getAllSubstrings(str) {
 	var i, j, result = [];
   
