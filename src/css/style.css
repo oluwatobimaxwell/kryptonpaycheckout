@@ -596,3 +596,12 @@ body.is-dark .glass-box {
 }
   
   
+.test-mode {
+	margin: auto auto 0.75rem; 
+	border-bottom: 1px solid #efefef;
+}
+  
+.is-dark .test-mode {
+	margin: auto auto 0.75rem; 
+	border-bottom: 1px solid #3f3f44;
+}

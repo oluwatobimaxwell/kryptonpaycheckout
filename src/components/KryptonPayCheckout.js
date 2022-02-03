@@ -153,7 +153,7 @@ const KryptonPayCheckout = (props) => {
 				className={`infraloader is-full ${loading ? "is-active" : ""}`}
 			></div>
 			<div className="minimal-wrapper light">
-				<div className={`landing-page-wrapper is-dark`}>
+				<div className={`landing-page-wrapper`}>
 					<KPModal
 						initMode={config?.mode}
 						changeCoin={() => restartProcess()}
@@ -170,6 +170,20 @@ const KryptonPayCheckout = (props) => {
 						{(info?.status && <KPLoader restartProcess={restartProcess}  {...info} />) || (
 							<>
 								<>
+								{(business?.identifier && !business?.state) ? (
+									<div 
+										className="test-mode">
+										<p
+											className="text-danger"
+											style={{
+												width: "max-content",
+												margin: "auto",
+												marginBottom: "0.75rem",
+												fontWeight: "bold"
+											}}
+										>TEST MODE</p>
+									</div>
+								):null}
 									<div
 										className="experience-item"
 										style={{
@@ -180,6 +194,7 @@ const KryptonPayCheckout = (props) => {
 											borderBottom: "1px solid #e0e0e0",
 										}}
 									>
+										
 										<img
 											style={{ height: 40, borderRadius: 6 }}
 											src={
